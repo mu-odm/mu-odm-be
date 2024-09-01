@@ -1,0 +1,23 @@
+
+server.port=your_port_number
+
+# Database Configuration
+spring.datasource.url=db_url
+spring.datasource.username=db_username
+spring.datasource.password=db_password
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+
+# JPA Configuration
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+
+# Spring Data JPA
+spring.data.jpa.repositories.enabled=true
+
+# Spring Boot DevTools
+spring.devtools.livereload.enabled=true
+spring.devtools.restart.enabled=true
+
+# swagger-ui custom path
+springdoc.swagger-ui.path=/swagger-ui.html
