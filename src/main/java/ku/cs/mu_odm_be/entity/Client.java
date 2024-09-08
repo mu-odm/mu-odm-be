@@ -19,7 +19,7 @@ public class Client {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "salesman_id")
+    @JoinColumn(name = "salesman_id", nullable = true)
     private Salesman salesman;
 
     private int contract_year;

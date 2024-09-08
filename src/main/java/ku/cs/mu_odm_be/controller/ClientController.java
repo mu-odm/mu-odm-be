@@ -20,9 +20,14 @@ public class ClientController {
     private SalesmanService salesmanService;
 
     @PostMapping("ref/{salesman_id}")
-    public Client createClient(@PathVariable UUID saleman_id, @RequestBody Client client) {
-        Salesman salesman = salesmanService.findById(saleman_id);
+    public Client createClient(@PathVariable UUID salesman_id, @RequestBody Client client) {
+        Salesman salesman = salesmanService.findById(salesman_id);
         client.setSalesman(salesman);
+        return clientService.createClient(client);
+    }
+
+    @PostMapping
+    public Client createClient(@RequestBody Client client) {
         return clientService.createClient(client);
     }
 }
