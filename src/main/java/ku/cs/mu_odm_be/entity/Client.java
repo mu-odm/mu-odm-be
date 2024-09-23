@@ -17,8 +17,7 @@ public class Client {
     private UUID id;
     private String name;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "salesman_id", nullable = true)
     private Salesman salesman;
 
