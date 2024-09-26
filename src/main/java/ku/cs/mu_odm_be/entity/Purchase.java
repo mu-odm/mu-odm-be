@@ -32,6 +32,11 @@ public class Purchase {
     @JoinColumn(name = "clients_id", nullable = true)
     private Client client;
 
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "orders_id", nullable = true)
+    private Order order;
+
     private String status;
     private Timestamp created_at;
 }

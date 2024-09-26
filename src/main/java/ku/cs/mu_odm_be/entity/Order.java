@@ -10,12 +10,12 @@ import java.util.UUID;
 @Entity
 @Data
 @ToString
-@Table(name = "Order")
+@Table(name = "order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Product> product;
+    private List<Purchase> purchases;
 }

@@ -44,5 +44,4 @@ public class PurchaseController {
         // Save the purchase using purchaseService
         return purchaseService.creatPurchase(purchase);
     }
-    }
 }
