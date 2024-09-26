@@ -18,6 +18,7 @@ public class ProductSize {
     private String size;
     private double additional_price;
 
-    @OneToMany(mappedBy = "productSize", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Product> product;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 }
