@@ -7,6 +7,8 @@ import jakarta.validation.constraints.Min;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -24,6 +26,15 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_size_id", nullable = false)
     private ProductSize productSize;
+
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "Purchase_products",
+            joinColumns = @JoinColumn(name = "Purchase_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<Purchase> purchases;
 
     @Column(nullable = false)
     @Min(0)//false
