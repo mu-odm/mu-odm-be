@@ -19,6 +19,6 @@ public class ProductSize {
     private double additional_price;
 
     @ManyToOne
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "product_id", nullable = true)
     private Product product;
 }

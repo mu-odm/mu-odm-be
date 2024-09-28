@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -23,9 +24,9 @@ public class Product {
     private double price;
 
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_size_id", nullable = false)
-    private ProductSize productSize;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_size_id", nullable = true)
+    private List<ProductSize> productSize;
 
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY)

@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.controller;
 
 import ku.cs.mu_odm_be.entity.Order;
+import ku.cs.mu_odm_be.request.OrderRequest;
 import ku.cs.mu_odm_be.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,5 +16,5 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public Order createOrder(@RequestBody Order order) {return orderService.createOrder(order);}
+    public Order createOrder(@RequestBody OrderRequest req) {return orderService.createOrder(req);}
 }

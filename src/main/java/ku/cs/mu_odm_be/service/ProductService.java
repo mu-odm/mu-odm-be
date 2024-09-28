@@ -1,7 +1,10 @@
 package ku.cs.mu_odm_be.service;
 
+import ku.cs.mu_odm_be.entity.Client;
 import ku.cs.mu_odm_be.entity.Product;
 import ku.cs.mu_odm_be.repository.ProductRepository;
+import ku.cs.mu_odm_be.request.ProductRequest;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +15,12 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Product createProduct (Product product) { return productRepository.save(product); }
+    @Autowired
+    private ModelMapper modelMapper;
+
+    public Product createProduct (ProductRequest req) {
+        Product product = modelMapper.map(req, Product.class);
+        return productRepository.save(product); }
 
     public Product updateProduct(Product product) {
         return productRepository.save(product);

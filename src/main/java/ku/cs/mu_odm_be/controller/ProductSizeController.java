@@ -2,6 +2,7 @@ package ku.cs.mu_odm_be.controller;
 
 import ku.cs.mu_odm_be.entity.ProductSize;
 import ku.cs.mu_odm_be.entity.Salesman;
+import ku.cs.mu_odm_be.request.ProductSizeRequest;
 import ku.cs.mu_odm_be.service.ProductSizeService;
 import ku.cs.mu_odm_be.service.SalesmanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +19,5 @@ public class ProductSizeController {
     private ProductSizeService productSizeService;
 
     @PostMapping
-    public ProductSize createProductSize(@RequestBody ProductSize productSize) {return productSizeService.createProductSize(productSize);}
+    public ProductSize createProductSize(@RequestBody ProductSizeRequest req) {return productSizeService.createProductSize(req);}
 }
