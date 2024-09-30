@@ -4,22 +4,28 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import ku.cs.mu_odm_be.entity.User;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class JwtProvider {
 
-    public String generateToken(Authentication authentication) {
-        String username = authentication.getName();
+    public String generateToken(User authentication) {
+        String username = authentication.getEmail();
         Date currentDate = new Date();
         Date expiredDate = new Date(currentDate.getTime() + SecurityConstants.JWT_EXPIRATION);
+        Map<String, String> claims = new HashMap<>();
+        claims.put("role", authentication.getRole());
 
         return Jwts.builder()
+                .setClaims(claims)
                 .setSubject(username)
                 .setIssuedAt(currentDate)
                 .setExpiration(expiredDate)

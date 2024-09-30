@@ -2,6 +2,7 @@ package ku.cs.mu_odm_be.service;
 
 import ku.cs.mu_odm_be.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 
@@ -13,7 +14,6 @@ import ku.cs.mu_odm_be.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Service
 public class UserDetailsServiceImp implements UserDetailsService {

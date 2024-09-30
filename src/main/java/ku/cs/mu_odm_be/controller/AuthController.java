@@ -5,6 +5,7 @@ import ku.cs.mu_odm_be.entity.User;
 import ku.cs.mu_odm_be.repository.UserRepository;
 import ku.cs.mu_odm_be.request.RegisterRequest;
 import ku.cs.mu_odm_be.response.AuthResponse;
+import ku.cs.mu_odm_be.service.RegisterService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,10 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -36,6 +34,9 @@ public class AuthController {
 
     @Autowired
     private JwtProvider jwtProvider;
+
+    @Autowired
+    private RegisterService registerService;
 
     @PostMapping("register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest req) {
@@ -60,9 +61,9 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(req.getEmail(), req.getPassword())
         );
         SecurityContextHolder.getContext().setAuthentication(authenticate);
-        String token = jwtProvider.generateToken(authenticate);
+        User user = registerService.findUserByEmail(authenticate.getName());
+        String token = jwtProvider.generateToken(user);
         return ResponseEntity.ok(new AuthResponse(token));
 
     }
-
 }
