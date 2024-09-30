@@ -31,11 +31,11 @@ public class Product {
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "Purchase_products",
-            joinColumns = @JoinColumn(name = "Purchase_id"),
+            name = "purchase_products",
+            joinColumns = @JoinColumn(name = "purchase_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    private Set<Purchase> purchases;
+    private Set<Purchase> purchases = new HashSet<>();
 
     @Column(nullable = false)
     @Min(0)//false

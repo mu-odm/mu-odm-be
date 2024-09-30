@@ -6,13 +6,14 @@ import lombok.Data;
 import lombok.ToString;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
 @Entity
 @Data
 @ToString
-@Table(name = "Purchase")
+@Table(name = "purchase")
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,11 +22,11 @@ public class Purchase {
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "Purchase_products",
-            joinColumns = @JoinColumn(name = "Purchase_id"),
+            name = "purchase_products",
+            joinColumns = @JoinColumn(name = "purchase_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    private Set<Product> products;
+    private Set<Product> products = new HashSet<>();
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
