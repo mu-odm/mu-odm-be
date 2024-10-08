@@ -36,9 +36,6 @@ public class ProductController {
         if (productDetails.getPrice() != 0) {
             existingProduct.setPrice(productDetails.getPrice());
         }
-        if (productDetails.getAvailable() >= 0) {  //boolean 0 - 1
-            existingProduct.setAvailable(productDetails.getAvailable());
-        }
 
         return productService.updateProduct(existingProduct);
     }

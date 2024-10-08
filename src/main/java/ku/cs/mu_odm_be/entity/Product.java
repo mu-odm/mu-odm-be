@@ -29,16 +29,11 @@ public class Product {
     private List<ProductSize> productSize;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "purchase_products",
-            joinColumns = @JoinColumn(name = "purchase_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private Set<Purchase> purchases = new HashSet<>();
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
 
-    @Column(nullable = false)
-    @Min(0)//false
-    @Max(1)//true
-    private int available;
+//    @Column(nullable = false)
+//    @Min(0)//false
+//    @Max(1)//true
+//    private int available;
 }

@@ -8,8 +8,8 @@ import java.util.UUID;
 
 @Data
 public class PurchaseRequest {
-    @NotBlank
-    private int status;
+//    @NotBlank
+//    private int status;
 
     @NotBlank
     private Timestamp created_at;

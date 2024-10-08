@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.entity;
 
 import jakarta.persistence.*;
+import ku.cs.mu_odm_be.common.Status;
 import lombok.Data;
 import lombok.ToString;
 
@@ -18,4 +19,6 @@ public class Order {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Purchase> purchases;
+
+    private Status status;
 }
