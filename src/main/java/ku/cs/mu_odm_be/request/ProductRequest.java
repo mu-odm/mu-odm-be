@@ -1,9 +1,8 @@
 package ku.cs.mu_odm_be.request;
 
 import jakarta.validation.constraints.NotBlank;
+import ku.cs.mu_odm_be.common.Status;
 import lombok.Data;
-
-import java.util.UUID;
 
 @Data
 public class ProductRequest {
@@ -14,5 +13,5 @@ public class ProductRequest {
     private double price;
 
     @NotBlank
-    private int available;
+    private Status status;
 }

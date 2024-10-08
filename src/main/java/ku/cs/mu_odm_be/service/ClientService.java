@@ -22,12 +22,12 @@ public class ClientService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public Client createClient(ClientRequest req) {
+    public ClientRequest createClient(ClientRequest req) {
         Client client = modelMapper.map(req, Client.class);
         Salesman salesman = salesmanService.findSalesmanByID(req.getSalesman_id());
         client.setSalesman(salesman);
         clientRepository.save(client);
-        return client;
+        return req;
     }
 
     public Client findById(UUID id) {

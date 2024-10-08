@@ -20,4 +20,7 @@ public class Salesman {
 
     @OneToMany(mappedBy = "salesman")
     private List<Client> clients;
+
+    @OneToOne(mappedBy = "salesman")
+    private User user;
 }

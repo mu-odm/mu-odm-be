@@ -2,13 +2,11 @@ package ku.cs.mu_odm_be.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+import ku.cs.mu_odm_be.common.Status;
 import lombok.Data;
 import lombok.ToString;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -24,16 +22,8 @@ public class Product {
     private double price;
 
     @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_size_id", nullable = true)
-    private List<ProductSize> productSize;
-
-    @JsonIgnore
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-    private Set<PurchaseProduct> purchaseProducts = new HashSet<>();
+    private Set<PurchaseProduct> purchase_products = new HashSet<>();
 
-//    @Column(nullable = false)
-//    @Min(0)//false
-//    @Max(1)//true
-//    private int available;
+    private Status status;
 }

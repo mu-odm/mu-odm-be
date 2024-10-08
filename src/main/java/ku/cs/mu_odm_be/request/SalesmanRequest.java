@@ -6,7 +6,5 @@ import lombok.Data;
 @Data
 public class SalesmanRequest {
     @NotBlank
-    private String name;
-    @NotBlank
     private String region;
 }

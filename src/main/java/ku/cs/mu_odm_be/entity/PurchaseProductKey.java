@@ -15,8 +15,8 @@ import java.util.UUID;
 
 public class PurchaseProductKey implements Serializable {
     @Column(name = "purchase_id")
-    private UUID purchaseId;
+    private UUID purchase_id;
 
-    @Column(name = "products_id")
-    private UUID productsId;
+    @Column(name = "product_id")
+    private UUID product_id;
 }

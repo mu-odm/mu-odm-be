@@ -1,6 +1,5 @@
 package ku.cs.mu_odm_be.service;
 
-import ku.cs.mu_odm_be.entity.Client;
 import ku.cs.mu_odm_be.entity.Product;
 import ku.cs.mu_odm_be.repository.ProductRepository;
 import ku.cs.mu_odm_be.request.ProductRequest;
@@ -18,9 +17,11 @@ public class ProductService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public Product createProduct (ProductRequest req) {
+    public ProductRequest createProduct (ProductRequest req) {
         Product product = modelMapper.map(req, Product.class);
-        return productRepository.save(product); }
+        productRepository.save(product);
+        return req;
+    }
 
     public Product updateProduct(Product product) {
         return productRepository.save(product);

@@ -8,10 +8,11 @@ import java.util.UUID;
 @Data
 public class PurchaseProductRequest {
 
-    private UUID productId;
+    @NotBlank
+    private UUID productID;
 
     @NotBlank
-    private UUID purchaseId;
+    private UUID clientID;
 
     @NotBlank
     private int amount;

@@ -3,6 +3,7 @@ package ku.cs.mu_odm_be.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
+
 import java.util.UUID;
 
 @Entity
@@ -19,4 +20,9 @@ public class User {
     private String username;
     private String password;
     private String role;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "salesman_id", referencedColumnName = "id")
+    private Salesman salesman;
+
 }

@@ -11,7 +11,7 @@ import java.util.*;
 @Entity
 @Data
 @ToString
-@Table(name = "purchase")
+@Table(name = "purchases")
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +31,5 @@ public class Purchase {
     @JoinColumn(name = "orders_id", nullable = true)
     private Order order;
 
-    private String status;
     private Timestamp created_at;
 }

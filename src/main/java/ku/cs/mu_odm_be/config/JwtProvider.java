@@ -2,14 +2,10 @@ package ku.cs.mu_odm_be.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
 import ku.cs.mu_odm_be.entity.User;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +18,7 @@ public class JwtProvider {
         Date currentDate = new Date();
         Date expiredDate = new Date(currentDate.getTime() + SecurityConstants.JWT_EXPIRATION);
         Map<String, String> claims = new HashMap<>();
-        claims.put("role", authentication.getRole());
+        claims.put("role", authentication.getRole().toString());
 
         return Jwts.builder()
                 .setClaims(claims)

@@ -21,11 +21,13 @@ public class ProductSizeService {
     @Autowired
     private ProductService productService;
 
-    public ProductSize createProductSize(ProductSizeRequest req) {
+    public ProductSizeRequest createProductSize(ProductSizeRequest req) {
         ProductSize productSize = modelMapper.map(req, ProductSize.class);
         Product product = productService.findById(req.getProduct_id());
         productSize.setProduct(product);
-        return productSizeRepository.save(productSize); }
+        productSizeRepository.save(productSize);
+        return req;
+    }
 
     public ProductSize findById(UUID id) {
         return productSizeRepository.findById(id).get();
