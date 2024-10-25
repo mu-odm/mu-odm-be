@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -26,7 +27,11 @@ public class ClientService {
         return modelMapper.map(client, ClientResponse.class);
     }
 
-    public Client findById(UUID id) {
-        return clientRepository.findById(id).orElse(null);
+    public ClientResponse getClient(UUID id) {
+        return modelMapper.map(clientRepository.findById(id).get(), ClientResponse.class);
+    }
+
+    public List<ClientResponse> getAllClients() {
+        return modelMapper.map(clientRepository.findAll(), List.class);
     }
 }

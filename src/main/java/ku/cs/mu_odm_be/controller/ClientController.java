@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.UUID;
+
 
 @RestController
 @RequestMapping("/clients")
@@ -22,6 +25,16 @@ public class ClientController {
             return null;
 
         return clientService.createClient(req);
+    }
+
+    @GetMapping
+    public List<ClientResponse> getAllClients() {
+        return clientService.getAllClients();
+    }
+
+    @GetMapping("/client")
+    public ClientResponse getClient(@RequestParam UUID id) {
+        return clientService.getClient(id);
     }
 
 }
