@@ -3,6 +3,7 @@ package ku.cs.mu_odm_be.service;
 import ku.cs.mu_odm_be.entity.Purchase;
 import ku.cs.mu_odm_be.repository.PurchaseRepository;
 import ku.cs.mu_odm_be.request.PurchaseRequest;
+import ku.cs.mu_odm_be.response.PurchaseResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,18 +20,18 @@ public class PurchaseService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<Purchase> getAllPurchases() {
-        return purchaseRepository.findAll();
+    public List<PurchaseResponse> getAllPurchases() {
+        return modelMapper.map(purchaseRepository.findAll(), List.class);
     }
 
-    public Purchase findPurchaseById(UUID id) {
-        return purchaseRepository.findById(id).orElse(null);
+    public PurchaseResponse getPurchase(UUID purchaseID) {
+        return modelMapper.map(purchaseRepository.findById(purchaseID).get(), PurchaseResponse.class);
     }
 
-    public List<Purchase> findAllPurchaseByClientId(UUID id) {
+    public List<Purchase> getAllPurchaseByClientId(UUID id) {
         return purchaseRepository.findAllByClientId(id);
     }
-    public Purchase findPurchaseByOrderIdAndClientId(UUID orderId, UUID clientId) {
+    public Purchase getPurchaseByOrderIdAndClientId(UUID orderId, UUID clientId) {
         return purchaseRepository.findByOrderIdAndClientId(orderId, clientId);
     }
 }

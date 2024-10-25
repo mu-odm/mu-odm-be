@@ -1,6 +1,5 @@
 package ku.cs.mu_odm_be.controller;
 
-import ku.cs.mu_odm_be.entity.Product;
 import ku.cs.mu_odm_be.request.ProductRequest;
 import ku.cs.mu_odm_be.response.ProductResponse;
 import ku.cs.mu_odm_be.service.ProductService;

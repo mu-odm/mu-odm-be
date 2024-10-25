@@ -41,7 +41,7 @@ public class PurchaseProductService {
             order = orderService.createOrder();
         }
 
-        Purchase purchase = purchaseService.findPurchaseByOrderIdAndClientId(
+        Purchase purchase = purchaseService.getPurchaseByOrderIdAndClientId(
                 order.getId(),
                 cID
         );
@@ -74,7 +74,7 @@ public class PurchaseProductService {
     }
 
     public List<PurchaseProductResponse> getAllPurchaseProductByClient(UUID clientID){
-        List<Purchase> purchase = purchaseService.findAllPurchaseByClientId(clientID);
+        List<Purchase> purchase = purchaseService.getAllPurchaseByClientId(clientID);
         return modelMapper.map(purchase, List.class);
     }
 
