@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -44,8 +45,8 @@ public class ProductService {
         return modelMapper.map(existingProduct, ProductResponse.class);
     }
 
-    public ProductResponse getAllProducts() {
-        return modelMapper.map(productRepository.findAll(), ProductResponse.class);
+    public List<ProductResponse> getAllProducts() {
+        return modelMapper.map(productRepository.findAll(), List.class);
     }
 
     public ProductResponse getProduct(UUID id) {
