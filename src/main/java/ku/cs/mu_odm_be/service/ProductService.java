@@ -12,11 +12,15 @@ import java.util.UUID;
 
 @Service
 public class ProductService {
-    @Autowired
-    private ProductRepository productRepository;
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private ProductService productService;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     public ProductResponse createProduct (ProductRequest req) {
         Product product = modelMapper.map(req, Product.class);
@@ -24,24 +28,31 @@ public class ProductService {
         return modelMapper.map(product, ProductResponse.class);
     }
 
-    public ProductResponse updateProduct(Product prod) {
-        Product existingProduct = this.findById(prod.getId());
-        if (existingProduct == null) {
-            throw new IllegalArgumentException("Product not found with id: " + prod.getId());
+    public ProductResponse updateProduct(UUID productID, ProductRequest req) {
+        ProductResponse res = productService.getProduct(productID);
+
+        if (res == null) {
+            throw new IllegalArgumentException("Product not found with id: " + productID);
         }
 
-        if (prod.getName() != null) {
-            existingProduct.setName(prod.getName());
+        if (req.getName() != null) {
+            res.setName(req.getName());
         }
-        if (prod.getPrice() != 0) {
-            existingProduct.setPrice(prod.getPrice());
+        if (req.getPrice() != 0) {
+            res.setPrice(req.getPrice());
         }
 
+        Product existingProduct = modelMapper.map(res, Product.class);
         productRepository.save(existingProduct);
         return modelMapper.map(existingProduct, ProductResponse.class);
     }
 
-    public Product findById(UUID id) {
-        return productRepository.findById(id).orElse(null);
+    public ProductResponse getAllProducts() {
+        return modelMapper.map(productRepository.findAll(), ProductResponse.class);
     }
+
+    public ProductResponse getProduct(UUID id) {
+        return modelMapper.map(productRepository.findById(id).orElse(null), ProductResponse.class);
+    }
+
 }

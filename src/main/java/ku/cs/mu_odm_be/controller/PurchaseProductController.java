@@ -10,6 +10,9 @@ import ku.cs.mu_odm_be.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/purchase_product")
 public class PurchaseProductController {
@@ -33,4 +36,10 @@ public class PurchaseProductController {
     public PurchaseProductResponse purchase (@RequestBody PurchaseProductRequest req) {
         return purchaseProductService.purchase(req);
     }
+
+    @GetMapping("/client")
+    public List<PurchaseProductResponse> getAllPurchaseProductByClient(@RequestParam UUID clientID) {
+        return purchaseProductService.getAllPurchaseProductByClient(clientID);
+    }
+
 }

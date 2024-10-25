@@ -6,12 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @Repository
 public interface PurchaseRepository extends JpaRepository<Purchase, UUID> {
-    Purchase findByClientId(UUID clientId);
+    List<Purchase> findAllByClientId(UUID clientId);
+
     Purchase findByOrderIdAndClientId(UUID orderId, UUID clientId);
 
     @Query("SELECT p FROM Purchase p WHERE p.client.id = :clientId AND p.id = :purchaseId")

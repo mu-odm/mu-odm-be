@@ -8,4 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface ProductSizeRepository extends JpaRepository<ProductSize, UUID> {
+    ProductSize findByProductId(UUID productId);
 }

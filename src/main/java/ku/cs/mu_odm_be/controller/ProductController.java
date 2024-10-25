@@ -22,8 +22,18 @@ public class ProductController {
         return productService.createProduct(req);
     }
 
-    @PutMapping("/id")
-    public ProductResponse updateProduct(@RequestParam UUID id, @RequestBody Product prod) {
-        return productService.updateProduct(prod);
+    @GetMapping
+    public ProductResponse getAllProducts() {
+        return productService.getAllProducts();
+    }
+
+    @GetMapping("/product")
+    public ProductResponse getProduct(@RequestParam UUID id) {
+        return productService.getProduct(id);
+    }
+
+    @PutMapping("/product")
+    public ProductResponse updateProduct(@RequestParam UUID productID, @RequestBody ProductRequest prod) {
+        return productService.updateProduct(productID, prod);
     }
 }

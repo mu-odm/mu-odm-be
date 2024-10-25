@@ -4,10 +4,9 @@ import ku.cs.mu_odm_be.request.ProductSizeRequest;
 import ku.cs.mu_odm_be.response.ProductSizeResponse;
 import ku.cs.mu_odm_be.service.ProductSizeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/product_size")
@@ -18,4 +17,7 @@ public class ProductSizeController {
 
     @PostMapping
     public ProductSizeResponse createProductSize(@RequestBody ProductSizeRequest req) {return productSizeService.createProductSize(req);}
+
+    @GetMapping("/product")
+    public ProductSizeResponse getProductSize(@RequestParam UUID productID) {return productSizeService.getProductSize(productID);}
 }

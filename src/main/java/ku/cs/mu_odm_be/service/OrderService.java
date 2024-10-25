@@ -6,6 +6,7 @@ import ku.cs.mu_odm_be.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -20,8 +21,12 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public Order findById(UUID id) {
-        return orderRepository.findById(id).orElse(null);
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
+    }
+
+    public Order getOrder() {
+        return orderRepository.findById(UUID.randomUUID()).orElse(null);
     }
 
     public Order findByStatus(Status status) {

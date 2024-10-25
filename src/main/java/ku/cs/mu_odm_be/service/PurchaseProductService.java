@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -70,6 +71,11 @@ public class PurchaseProductService {
 
         purchaseProductRepository.save(purchaseProduct);
         return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
+    }
+
+    public List<PurchaseProductResponse> getAllPurchaseProductByClient(UUID clientID){
+        List<Purchase> purchase = purchaseService.findAllPurchaseByClientId(clientID);
+        return modelMapper.map(purchase, List.class);
     }
 
 
