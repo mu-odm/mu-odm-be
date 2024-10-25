@@ -4,6 +4,8 @@ import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.*;
 import ku.cs.mu_odm_be.repository.*;
 import ku.cs.mu_odm_be.request.PurchaseProductRequest;
+import ku.cs.mu_odm_be.response.PurchaseProductResponse;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,9 @@ public class PurchaseProductService {
     @Autowired
     private ClientService clientService;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     public Purchase getCurrentPurchase(UUID cID){
         Order order = orderService.findByStatus(Status.available);
         if (order == null){
@@ -45,13 +50,14 @@ public class PurchaseProductService {
             Purchase newPurchase = new Purchase();
             newPurchase.setOrder(order);
             newPurchase.setClient(clientService.findById(cID));
+            newPurchase.setCreated_at(new java.sql.Timestamp(System.currentTimeMillis()));
             purchase = purchaseRepository.save(newPurchase);
         }
 
         return purchase;
     }
 
-    public PurchaseProductRequest purchase(PurchaseProductRequest req){
+    public PurchaseProductResponse purchase(PurchaseProductRequest req){
 
         Purchase purchase = getCurrentPurchase(req.getClientID());
         Product product = productRepository.findByid(req.getProductID());
@@ -63,7 +69,7 @@ public class PurchaseProductService {
         purchaseProduct.setPurchase(purchase);
 
         purchaseProductRepository.save(purchaseProduct);
-        return req;
+        return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
     }
 
 

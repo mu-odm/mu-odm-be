@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.controller;
 
 import ku.cs.mu_odm_be.request.PurchaseProductRequest;
+import ku.cs.mu_odm_be.response.PurchaseProductResponse;
 import ku.cs.mu_odm_be.service.ClientService;
 import ku.cs.mu_odm_be.service.ProductService;
 import ku.cs.mu_odm_be.service.OrderService;
@@ -29,7 +30,7 @@ public class PurchaseProductController {
     ProductService productService;
 
     @PostMapping
-    public PurchaseProductRequest purchase (@RequestBody PurchaseProductRequest req) {
+    public PurchaseProductResponse purchase (@RequestBody PurchaseProductRequest req) {
         return purchaseProductService.purchase(req);
     }
 }

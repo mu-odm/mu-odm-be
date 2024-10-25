@@ -20,9 +20,6 @@ public class User {
     private String username;
     private String password;
     private String role;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "salesman_id", referencedColumnName = "id")
-    private Salesman salesman;
+    private String region;
 
 }

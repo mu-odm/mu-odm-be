@@ -16,9 +16,5 @@ public class Client {
     private UUID id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "salesman_id", nullable = true)
-    private Salesman salesman;
-
     private int contract_year;
 }

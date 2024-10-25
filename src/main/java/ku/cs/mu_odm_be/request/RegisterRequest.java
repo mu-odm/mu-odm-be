@@ -17,4 +17,6 @@ public class RegisterRequest {
     @NotBlank
     @ValidPassword
     private String password;
+    @NotBlank
+    private String region;
 }
