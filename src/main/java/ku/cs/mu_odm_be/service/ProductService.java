@@ -17,9 +17,6 @@ public class ProductService {
     private ModelMapper modelMapper;
 
     @Autowired
-    private ProductService productService;
-
-    @Autowired
     private ProductRepository productRepository;
 
     public ProductResponse createProduct (ProductRequest req) {
@@ -29,7 +26,7 @@ public class ProductService {
     }
 
     public ProductResponse updateProduct(UUID productID, ProductRequest req) {
-        ProductResponse res = productService.getProduct(productID);
+        ProductResponse res = getProduct(productID);
 
         if (res == null) {
             throw new IllegalArgumentException("Product not found with id: " + productID);
