@@ -30,7 +30,7 @@ public class PurchaseProductService {
     private PurchaseService purchaseService;
 
     @Autowired
-    private ClientService clientService;
+    private ClientRepository clientRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -50,7 +50,7 @@ public class PurchaseProductService {
             System.out.println("purchase not found");
             Purchase newPurchase = new Purchase();
             newPurchase.setOrder(order);
-            newPurchase.setClient(clientService.findById(cID));
+            newPurchase.setClient(clientRepository.findById(cID).get());
             newPurchase.setCreated_at(new java.sql.Timestamp(System.currentTimeMillis()));
             purchase = purchaseRepository.save(newPurchase);
         }
