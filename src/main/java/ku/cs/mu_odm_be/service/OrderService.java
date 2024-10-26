@@ -3,6 +3,7 @@ package ku.cs.mu_odm_be.service;
 import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.Order;
 import ku.cs.mu_odm_be.repository.OrderRepository;
+import ku.cs.mu_odm_be.request.OrderRequest;
 import ku.cs.mu_odm_be.response.OrderResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,12 @@ public class OrderService {
 
     public Order findByStatus(Status status) {
         return orderRepository.findByStatus(status);
+    }
+
+    public OrderResponse updateOrder(UUID orderID, OrderRequest req) {
+        Order currentOrder = orderRepository.findById(orderID).get();
+        currentOrder.setStatus(req.getStatus());
+        currentOrder.setRegion(req.getRegion());
+        return modelMapper.map(orderRepository.save(currentOrder), OrderResponse.class);
     }
 }

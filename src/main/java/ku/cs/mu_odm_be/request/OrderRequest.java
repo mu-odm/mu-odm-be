@@ -5,16 +5,9 @@ import ku.cs.mu_odm_be.common.Status;
 import lombok.Data;
 
 @Data
-public class ProductRequest {
+public class OrderRequest {
     @NotBlank
-    private String name;
-
-    @NotBlank
-    private double price;
-
+    private String region;
     @NotBlank
     private Status status;
-
-    @NotBlank
-    private int remaining;
 }

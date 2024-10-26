@@ -9,4 +9,5 @@ import java.util.UUID;
 public class OrderResponse {
     private UUID id;
     private Status status;
+    private String region;
 }
