@@ -1,5 +1,7 @@
 package ku.cs.mu_odm_be.service;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.*;
 import ku.cs.mu_odm_be.repository.*;
@@ -35,10 +37,13 @@ public class PurchaseProductService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public Purchase getCurrentPurchase(UUID cID){
-        Order order = orderService.findByStatus(Status.available);
+    @Autowired
+    private UserRepository userRepository;
+
+    public Purchase getCurrentPurchase(UUID cID, User user){
+        Order order = orderService.getExistOrder(Status.available, user.getRegion());
         if (order == null){
-            order = orderService.createOrder();
+            order = orderService.createOrder(user.getRegion());
         }
 
         Purchase purchase = purchaseService.getPurchaseByOrderIdAndClientId(
@@ -58,9 +63,19 @@ public class PurchaseProductService {
         return purchase;
     }
 
-    public PurchaseProductResponse purchase(PurchaseProductRequest req){
+    private String decodeJWT(String token) {
+        DecodedJWT decodedJWT = JWT.decode(token);
+        return decodedJWT.getSubject();
+    }
 
-        Purchase purchase = getCurrentPurchase(req.getClientID());
+    public PurchaseProductResponse purchase(PurchaseProductRequest req, String authorizationHeader){
+
+        String token = authorizationHeader.substring(7);
+        String sub = decodeJWT(token);
+
+        User user = userRepository.findByEmail(sub);
+
+        Purchase purchase = getCurrentPurchase(req.getClientID(), user);
         Product product = productRepository.findByid(req.getProductID());
 
         PurchaseProduct purchaseProduct = new PurchaseProduct();

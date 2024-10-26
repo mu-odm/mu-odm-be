@@ -21,9 +21,10 @@ public class OrderService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public Order createOrder() {
+    public Order createOrder(String region) {
         Order order = new Order();
         order.setStatus(Status.available);
+        order.setRegion(region);
         return orderRepository.save(order);
     }
 
@@ -35,8 +36,14 @@ public class OrderService {
         return modelMapper.map(orderRepository.findById(orderID).get(), OrderResponse.class);
     }
 
-    public Order findByStatus(Status status) {
-        return orderRepository.findByStatus(status);
+    public Order getExistOrder(Status status, String region) {
+        Order exist = orderRepository.findByStatus(status);
+
+        if (exist != null && exist.getRegion().equals(region)) {
+            return exist;
+        }
+
+        return null;
     }
 
     public OrderResponse updateOrder(UUID orderID, OrderRequest req) {
