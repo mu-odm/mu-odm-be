@@ -37,13 +37,7 @@ public class OrderService {
     }
 
     public Order getExistOrder(Status status, String region) {
-        Order exist = orderRepository.findByStatus(status);
-
-        if (exist != null && exist.getRegion().equals(region)) {
-            return exist;
-        }
-
-        return null;
+        return orderRepository.findByRegionAndStatus(region, status);
     }
 
     public OrderResponse updateOrder(UUID orderID, OrderRequest req) {

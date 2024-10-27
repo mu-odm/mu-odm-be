@@ -52,7 +52,6 @@ public class PurchaseProductService {
         );
 
         if (purchase == null){
-            System.out.println("purchase not found");
             Purchase newPurchase = new Purchase();
             newPurchase.setOrder(order);
             newPurchase.setClient(clientRepository.findById(cID).get());
