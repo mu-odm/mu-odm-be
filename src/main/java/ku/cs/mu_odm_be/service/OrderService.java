@@ -2,6 +2,7 @@ package ku.cs.mu_odm_be.service;
 
 import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.Order;
+import ku.cs.mu_odm_be.entity.User;
 import ku.cs.mu_odm_be.repository.OrderRepository;
 import ku.cs.mu_odm_be.request.OrderRequest;
 import ku.cs.mu_odm_be.response.OrderResponse;
@@ -21,10 +22,11 @@ public class OrderService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public Order createOrder(String region) {
+    public Order createOrder(User user) {
         Order order = new Order();
         order.setStatus(Status.available);
-        order.setRegion(region);
+        order.setUser(user);
+
         return orderRepository.save(order);
     }
 
@@ -43,7 +45,6 @@ public class OrderService {
     public OrderResponse updateOrder(UUID orderID, OrderRequest req) {
         Order currentOrder = orderRepository.findById(orderID).get();
         currentOrder.setStatus(req.getStatus());
-        currentOrder.setRegion(req.getRegion());
         return modelMapper.map(orderRepository.save(currentOrder), OrderResponse.class);
     }
 }

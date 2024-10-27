@@ -7,7 +7,5 @@ import lombok.Data;
 @Data
 public class OrderRequest {
     @NotBlank
-    private String region;
-    @NotBlank
     private Status status;
 }

@@ -1,5 +1,4 @@
 package ku.cs.mu_odm_be.controller;
-import ku.cs.mu_odm_be.entity.Order;
 import ku.cs.mu_odm_be.request.OrderRequest;
 import ku.cs.mu_odm_be.response.OrderResponse;
 import ku.cs.mu_odm_be.service.OrderService;

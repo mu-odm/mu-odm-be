@@ -43,7 +43,7 @@ public class PurchaseProductService {
     public Purchase getCurrentPurchase(UUID cID, User user){
         Order order = orderService.getExistOrder(Status.available, user.getRegion());
         if (order == null){
-            order = orderService.createOrder(user.getRegion());
+            order = orderService.createOrder(user);
         }
 
         Purchase purchase = purchaseService.getPurchaseByOrderIdAndClientId(
