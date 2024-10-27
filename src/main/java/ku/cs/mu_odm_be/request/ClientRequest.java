@@ -14,4 +14,9 @@ public class ClientRequest {
     @Positive
     private int contract_year;
 
+    @NotBlank
+    private String location;
+    @NotBlank
+    private String contact;
+
 }

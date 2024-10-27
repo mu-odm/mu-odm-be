@@ -17,4 +17,6 @@ public class Client {
     private String name;
 
     private int contract_year;
+    private String location;
+    private String contact;
 }
