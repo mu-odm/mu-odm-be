@@ -34,4 +34,8 @@ public class ClientService {
     public List<ClientResponse> getAllClients() {
         return modelMapper.map(clientRepository.findAll(), List.class);
     }
+
+    public ClientResponse getClientByEmail(String email) {
+        return modelMapper.map(clientRepository.findByEmail(email), ClientResponse.class);
+    }
 }

@@ -14,6 +14,7 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+    private String email;
     private String name;
 
     private int contract_year;

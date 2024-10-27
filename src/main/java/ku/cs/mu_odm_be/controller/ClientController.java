@@ -37,4 +37,9 @@ public class ClientController {
         return clientService.getClient(id);
     }
 
+    @GetMapping("/email")
+    public ClientResponse getClientByEmail(@RequestParam String email) {
+        return clientService.getClientByEmail(email);
+    }
+
 }

@@ -9,6 +9,9 @@ import lombok.Data;
 public class ClientRequest {
 
     @NotBlank
+    private String email;
+
+    @NotBlank
     private String name;
     @NotBlank
     @Positive
