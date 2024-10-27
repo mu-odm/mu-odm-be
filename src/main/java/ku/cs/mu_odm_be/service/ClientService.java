@@ -23,6 +23,11 @@ public class ClientService {
 
     public ClientResponse createClient(ClientRequest req) {
         Client client = modelMapper.map(req, Client.class);
+
+        if (clientRepository.existsByEmail(client.getEmail())) {
+            throw new RuntimeException("Email already exists");
+        }
+
         clientRepository.save(client);
         return modelMapper.map(client, ClientResponse.class);
     }
