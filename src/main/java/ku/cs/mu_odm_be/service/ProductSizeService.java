@@ -31,7 +31,11 @@ public class ProductSizeService {
         Product product = productRepository.findById(req.getProduct_id()).get();
         productSize.setProduct(product);
         productSizeRepository.save(productSize);
-        return modelMapper.map(productSize, ProductSizeResponse.class);
+
+        ProductSizeResponse response = modelMapper.map(productSize, ProductSizeResponse.class);
+        response.setProduct_id(product.getId());
+
+        return response;
     }
 
     public ProductSize findById(UUID id) {
