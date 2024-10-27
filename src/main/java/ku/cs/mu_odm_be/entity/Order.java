@@ -21,6 +21,7 @@ public class Order {
     private List<Purchase> purchases;
 
     private Status status;
+    private String region;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = true)

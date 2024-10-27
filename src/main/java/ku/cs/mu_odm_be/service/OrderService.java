@@ -26,6 +26,7 @@ public class OrderService {
         Order order = new Order();
         order.setStatus(Status.available);
         order.setUser(user);
+        order.setRegion(user.getRegion());
 
         return orderRepository.save(order);
     }
