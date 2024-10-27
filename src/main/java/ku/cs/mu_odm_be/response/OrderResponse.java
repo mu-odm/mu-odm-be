@@ -9,6 +9,6 @@ import java.util.UUID;
 public class OrderResponse {
     private UUID id;
     private Status status;
-    private UUID user_id;
+    private UserResponse user;
     private String region;
 }

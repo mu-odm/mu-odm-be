@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -37,7 +38,11 @@ public class ProductSizeService {
         return productSizeRepository.findById(id).get();
     }
 
-    public ProductSizeResponse getProductSize(UUID productID) {
-        return modelMapper.map(productSizeRepository.findByProductId(productID), ProductSizeResponse.class);
+    public List<ProductSizeResponse> getProductSize(UUID productID) {
+        Product product = productRepository.findById(productID).get();
+        List<ProductSize> productSizes = productSizeRepository.findByProductId(product.getId());
+        return productSizes.stream()
+                .map(productSize -> modelMapper.map(productSize, ProductSizeResponse.class))
+                .collect(java.util.stream.Collectors.toList());
     }
 }

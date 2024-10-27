@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
@@ -32,7 +33,10 @@ public class OrderService {
     }
 
     public List<OrderResponse> getAllOrders() {
-        return modelMapper.map(orderRepository.findAll(), List.class);
+        List<Order> orders = orderRepository.findAll();
+        return orders.stream()
+                .map(order -> modelMapper.map(order, OrderResponse.class))
+                .collect(Collectors.toList());
     }
 
     public OrderResponse getOrder(UUID orderID) {
