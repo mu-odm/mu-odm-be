@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class PurchaseService {
@@ -21,7 +22,15 @@ public class PurchaseService {
     private ModelMapper modelMapper;
 
     public List<PurchaseResponse> getAllPurchases() {
-        return modelMapper.map(purchaseRepository.findAll(), List.class);
+        List<Purchase> purchases = purchaseRepository.findAll();
+        return purchases.stream()
+                .map(purchase -> {
+                    PurchaseResponse response = modelMapper.map(purchase, PurchaseResponse.class);
+                    response.setClientID(purchase.getClient().getId());
+                    response.setOrderID(purchase.getOrder().getId());
+                    return response;
+                })
+                .collect(Collectors.toList());
     }
 
     public PurchaseResponse getPurchase(UUID purchaseID) {
