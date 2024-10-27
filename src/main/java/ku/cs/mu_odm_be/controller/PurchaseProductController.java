@@ -41,9 +41,9 @@ public class PurchaseProductController {
         return purchaseProductService.purchase(req, authorizationHeader);
     }
 
-    @GetMapping("/client")
-    public List<PurchaseProductResponse> getAllPurchaseProductByClient(@RequestParam UUID clientID) {
-        return purchaseProductService.getAllPurchaseProductByClient(clientID);
+    @GetMapping
+    public List<PurchaseProductResponse> getAllPurchaseProduct() {
+        return purchaseProductService.getAllPurchaseProduct();
     }
 
 }

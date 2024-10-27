@@ -87,9 +87,11 @@ public class PurchaseProductService {
         return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
     }
 
-    public List<PurchaseProductResponse> getAllPurchaseProductByClient(UUID clientID){
-        List<Purchase> purchase = purchaseService.getAllPurchaseByClientId(clientID);
-        return modelMapper.map(purchase, List.class);
+    public List<PurchaseProductResponse> getAllPurchaseProduct(){
+        List<PurchaseProduct> purchaseProducts = purchaseProductRepository.findAll();
+        return purchaseProducts.stream()
+                .map(purchaseProduct -> modelMapper.map(purchaseProduct, PurchaseProductResponse.class))
+                .toList();
     }
 
 
