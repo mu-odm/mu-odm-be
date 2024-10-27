@@ -21,4 +21,8 @@ public class ProductSizeController {
 
     @GetMapping("/product")
     public List<ProductSizeResponse> getProductSize(@RequestParam UUID productID) {return productSizeService.getProductSize(productID);}
+
+    @DeleteMapping("/product_size")
+    public void deleteProductSize(@RequestParam UUID id) {productSizeService.deleteProductSize(id);}
+
 }

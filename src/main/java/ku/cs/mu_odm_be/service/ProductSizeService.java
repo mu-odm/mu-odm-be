@@ -49,4 +49,8 @@ public class ProductSizeService {
                 .map(productSize -> modelMapper.map(productSize, ProductSizeResponse.class))
                 .collect(java.util.stream.Collectors.toList());
     }
+
+    public void deleteProductSize(UUID id) {
+        productSizeRepository.deleteById(id);
+    }
 }

@@ -1,5 +1,6 @@
 package ku.cs.mu_odm_be.service;
 
+import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.Product;
 import ku.cs.mu_odm_be.repository.ProductRepository;
 import ku.cs.mu_odm_be.request.ProductRequest;
@@ -38,6 +39,14 @@ public class ProductService {
         }
         if (req.getPrice() != 0) {
             res.setPrice(req.getPrice());
+        }
+
+        if (req.getRemaining() > 0) {
+            res.setRemaining(req.getRemaining());
+        }
+        else if (req.getRemaining() <= 0) {
+            res.setRemaining(0);
+            res.setStatus(Status.unavailable);
         }
 
         Product existingProduct = modelMapper.map(res, Product.class);
