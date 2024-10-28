@@ -26,6 +26,9 @@ public class Product {
     private Set<PurchaseProduct> purchase_products = new HashSet<>();
 
     private Status status;
-
     private int remaining;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private Set<PPS> pps = new HashSet<>();
 }
