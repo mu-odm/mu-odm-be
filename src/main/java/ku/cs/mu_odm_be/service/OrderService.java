@@ -59,6 +59,11 @@ public class OrderService {
     @Scheduled(cron = "0 0 0 * * *", zone = "Asia/Bangkok")
     public void midnightUpdate() {
         List<Order> orders = orderRepository.findAll();
+
+        if (orders.isEmpty()) {
+            return;
+        }
+
         orders.forEach(order -> {
             if (order.getStatus() == Status.Available) {
                 order.setStatus(Status.Unavailable);
