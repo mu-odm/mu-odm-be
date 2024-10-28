@@ -63,4 +63,11 @@ public class ProductService {
         return modelMapper.map(productRepository.findById(id).orElse(null), ProductResponse.class);
     }
 
+    public List<ProductResponse> getProductByName(String name) {
+        List<Product> products = productRepository.findByName(name);
+        return products.stream()
+                .map(product -> modelMapper.map(product, ProductResponse.class))
+                .collect(java.util.stream.Collectors.toList());
+    }
+
 }

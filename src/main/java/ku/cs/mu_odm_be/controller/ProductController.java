@@ -36,4 +36,9 @@ public class ProductController {
     public ProductResponse updateProduct(@RequestParam UUID productID, @RequestBody ProductRequest prod) {
         return productService.updateProduct(productID, prod);
     }
+
+    @GetMapping("/name")
+    public List<ProductResponse> getProductByName(@RequestParam String name) {
+        return productService.getProductByName(name);
+    }
 }
