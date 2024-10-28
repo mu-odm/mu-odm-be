@@ -2,6 +2,7 @@ package ku.cs.mu_odm_be.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import ku.cs.mu_odm_be.common.PurchasApproval;
 import lombok.Data;
 import lombok.ToString;
 
@@ -32,4 +33,5 @@ public class Purchase {
     private Order order;
 
     private Timestamp created_at;
+    private PurchasApproval status;
 }

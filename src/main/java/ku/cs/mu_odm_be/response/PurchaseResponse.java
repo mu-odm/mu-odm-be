@@ -1,5 +1,6 @@
 package ku.cs.mu_odm_be.response;
 
+import ku.cs.mu_odm_be.common.PurchasApproval;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -11,4 +12,5 @@ public class PurchaseResponse {
     private UUID clientID;
     private UUID orderID;
     private Timestamp created_at;
+    private PurchasApproval status;
 }

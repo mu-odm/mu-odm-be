@@ -1,5 +1,6 @@
 package ku.cs.mu_odm_be.service;
 
+import ku.cs.mu_odm_be.common.PurchasApproval;
 import ku.cs.mu_odm_be.entity.Purchase;
 import ku.cs.mu_odm_be.repository.PurchaseRepository;
 import ku.cs.mu_odm_be.request.PurchaseRequest;
@@ -42,5 +43,11 @@ public class PurchaseService {
     }
     public Purchase getPurchaseByOrderIdAndClientId(UUID orderId, UUID clientId) {
         return purchaseRepository.findByOrderIdAndClientId(orderId, clientId);
+    }
+
+    public PurchaseResponse updatePurchase(UUID purchaseID, PurchasApproval status) {
+        Purchase purchase = purchaseRepository.findById(purchaseID).get();
+        purchase.setStatus(status);
+        return modelMapper.map(purchaseRepository.save(purchase), PurchaseResponse.class);
     }
 }

@@ -2,6 +2,7 @@ package ku.cs.mu_odm_be.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import ku.cs.mu_odm_be.common.PurchasApproval;
 import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.*;
 import ku.cs.mu_odm_be.repository.*;
@@ -51,11 +52,12 @@ public class PurchaseProductService {
                 cID
         );
 
-        if (purchase == null){
+        if (purchase == null || purchase.getStatus() != PurchasApproval.Pending){
             Purchase newPurchase = new Purchase();
             newPurchase.setOrder(order);
             newPurchase.setClient(clientRepository.findById(cID).get());
             newPurchase.setCreated_at(new java.sql.Timestamp(System.currentTimeMillis()));
+            newPurchase.setStatus(PurchasApproval.Pending);
             purchase = purchaseRepository.save(newPurchase);
         }
 

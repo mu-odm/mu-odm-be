@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.request;
 
 import jakarta.validation.constraints.NotBlank;
+import ku.cs.mu_odm_be.common.PurchasApproval;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -19,4 +20,5 @@ public class PurchaseRequest {
 
     @NotBlank
     private UUID order_id;
+
 }
