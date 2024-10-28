@@ -41,7 +41,7 @@ public class PurchaseProductService {
     private UserRepository userRepository;
 
     public Purchase getCurrentPurchase(UUID cID, User user){
-        Order order = orderService.getExistOrder(Status.available, user.getRegion());
+        Order order = orderService.getExistOrder(Status.Available, user.getRegion());
         if (order == null){
             order = orderService.createOrder(user);
         }

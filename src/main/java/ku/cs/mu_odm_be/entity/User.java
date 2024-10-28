@@ -1,10 +1,12 @@
 package ku.cs.mu_odm_be.entity;
 
 import jakarta.persistence.*;
+import ku.cs.mu_odm_be.common.Region;
 import lombok.Data;
 import lombok.ToString;
 
 import java.util.UUID;
+
 
 @Entity
 @Data
@@ -20,6 +22,6 @@ public class User {
     private String username;
     private String password;
     private String role;
-    private String region;
+    private Region region;
 
 }

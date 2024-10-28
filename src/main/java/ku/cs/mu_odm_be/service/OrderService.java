@@ -1,11 +1,13 @@
 package ku.cs.mu_odm_be.service;
 
+import ku.cs.mu_odm_be.common.Region;
 import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.Order;
 import ku.cs.mu_odm_be.entity.User;
 import ku.cs.mu_odm_be.repository.OrderRepository;
 import ku.cs.mu_odm_be.request.OrderRequest;
 import ku.cs.mu_odm_be.response.OrderResponse;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +27,7 @@ public class OrderService {
 
     public Order createOrder(User user) {
         Order order = new Order();
-        order.setStatus(Status.available);
+        order.setStatus(Status.Available);
         order.setUser(user);
         order.setRegion(user.getRegion());
 
@@ -43,7 +45,7 @@ public class OrderService {
         return modelMapper.map(orderRepository.findById(orderID).get(), OrderResponse.class);
     }
 
-    public Order getExistOrder(Status status, String region) {
+    public Order getExistOrder(Status status, Region region) {
         return orderRepository.findByRegionAndStatus(region, status);
     }
 
