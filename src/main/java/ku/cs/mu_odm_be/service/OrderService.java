@@ -10,6 +10,7 @@ import ku.cs.mu_odm_be.response.OrderResponse;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -53,5 +54,16 @@ public class OrderService {
         Order currentOrder = orderRepository.findById(orderID).get();
         currentOrder.setStatus(req.getStatus());
         return modelMapper.map(orderRepository.save(currentOrder), OrderResponse.class);
+    }
+
+    @Scheduled(cron = "0 0 0 * * *", zone = "Asia/Bangkok")
+    public void midnightUpdate() {
+        List<Order> orders = orderRepository.findAll();
+        orders.forEach(order -> {
+            if (order.getStatus() == Status.Available) {
+                order.setStatus(Status.Unavailable);
+                orderRepository.save(order);
+            }
+        });
     }
 }
