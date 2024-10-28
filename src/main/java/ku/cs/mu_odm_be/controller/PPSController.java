@@ -3,6 +3,7 @@ package ku.cs.mu_odm_be.controller;
 import ku.cs.mu_odm_be.entity.PPS;
 import ku.cs.mu_odm_be.request.PPSRequest;
 import ku.cs.mu_odm_be.request.PurchaseProductRequest;
+import ku.cs.mu_odm_be.response.PPSResponse;
 import ku.cs.mu_odm_be.response.PurchaseProductResponse;
 import ku.cs.mu_odm_be.service.PPSService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class PPSController {
     PPSService ppsService;
 
     @PostMapping
-    public PPS createPPS (@RequestBody PPSRequest req, BindingResult result) {
+    public PPSResponse createPPS (@RequestBody PPSRequest req, BindingResult result) {
 
         if (result.hasErrors())
             return null;
@@ -29,7 +30,7 @@ public class PPSController {
     }
 
     @GetMapping
-    public List<PPS> getAllPPS() {
+    public List<PPSResponse> getAllPPS() {
         return ppsService.getAllPPS();
     }
 }
