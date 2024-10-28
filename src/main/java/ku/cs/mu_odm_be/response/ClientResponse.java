@@ -12,4 +12,5 @@ public class ClientResponse {
     private int contract_year;
     private String location;
     private String contact;
+    private boolean isDeferStatus;
 }

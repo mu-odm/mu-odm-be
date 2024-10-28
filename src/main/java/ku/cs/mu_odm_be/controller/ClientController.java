@@ -42,4 +42,9 @@ public class ClientController {
         return clientService.getClientByEmail(email);
     }
 
+    @PutMapping("/email")
+    public ClientResponse updateClient(@RequestParam String email, @RequestBody boolean isDeferStatus) {
+        return clientService.updateClient(email, isDeferStatus);
+    }
+
 }

@@ -20,4 +20,5 @@ public class Client {
     private int contract_year;
     private String location;
     private String contact;
+    private boolean isDeferStatus;
 }
