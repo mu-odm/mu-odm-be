@@ -21,4 +21,8 @@ public class Client {
     private String location;
     private String contact;
     private boolean isDeferStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = true)
+    private User user;
 }

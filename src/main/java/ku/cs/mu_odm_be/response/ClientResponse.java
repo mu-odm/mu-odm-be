@@ -13,4 +13,6 @@ public class ClientResponse {
     private String location;
     private String contact;
     private boolean isDeferStatus;
+
+    private UUID user_id;
 }

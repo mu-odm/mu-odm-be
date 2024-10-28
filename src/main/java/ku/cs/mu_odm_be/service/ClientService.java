@@ -1,7 +1,11 @@
 package ku.cs.mu_odm_be.service;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import ku.cs.mu_odm_be.entity.Client;
+import ku.cs.mu_odm_be.entity.User;
 import ku.cs.mu_odm_be.repository.ClientRepository;
+import ku.cs.mu_odm_be.repository.UserRepository;
 import ku.cs.mu_odm_be.request.ClientRequest;
 import ku.cs.mu_odm_be.response.ClientResponse;
 import org.modelmapper.ModelMapper;
@@ -17,19 +21,34 @@ public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
-
     @Autowired
     private ModelMapper modelMapper;
 
-    public ClientResponse createClient(ClientRequest req) {
+    @Autowired
+    private UserRepository userRepository;
+
+    private String decodeJWT(String token) {
+        DecodedJWT decodedJWT = JWT.decode(token);
+        return decodedJWT.getSubject();
+    }
+
+    public ClientResponse createClient(ClientRequest req, String authorizationHeader) {
         Client client = modelMapper.map(req, Client.class);
 
         if (clientRepository.existsByEmail(client.getEmail())) {
             throw new RuntimeException("Email already exists");
         }
 
+        String token = authorizationHeader.substring(7);
+        String sub = decodeJWT(token);
+
+        User user = userRepository.findByEmail(sub);
+        client.setUser(user);
+
         clientRepository.save(client);
-        return modelMapper.map(client, ClientResponse.class);
+        ClientResponse response = modelMapper.map(client, ClientResponse.class);
+        response.setUser_id(user.getId());
+        return response;
     }
 
     public ClientResponse getClient(UUID id) {
@@ -46,7 +65,7 @@ public class ClientService {
 
     public ClientResponse updateClient(String email, boolean isDefer) {
         Client client = clientRepository.findByEmail(email);
-        client.setDefer(isDefer);
+        client.setDeferStatus(isDefer);
         return modelMapper.map(clientRepository.save(client), ClientResponse.class);
     }
 }

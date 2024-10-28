@@ -4,6 +4,7 @@ import ku.cs.mu_odm_be.request.ClientRequest;
 import ku.cs.mu_odm_be.response.ClientResponse;
 import ku.cs.mu_odm_be.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +20,16 @@ public class ClientController {
     private ClientService clientService;
 
     @PostMapping
-    public ClientResponse createClient(@RequestBody ClientRequest req, BindingResult result) {
+    public ClientResponse createClient(
+            @RequestBody ClientRequest req,
+            BindingResult result,
+            @RequestHeader(HttpHeaders.AUTHORIZATION) String authorizationHeader
+    ) {
 
         if (result.hasErrors())
             return null;
 
-        return clientService.createClient(req);
+        return clientService.createClient(req, authorizationHeader);
     }
 
     @GetMapping
