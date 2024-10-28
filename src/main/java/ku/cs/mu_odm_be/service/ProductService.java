@@ -46,7 +46,7 @@ public class ProductService {
         }
         else if (req.getRemaining() <= 0) {
             res.setRemaining(0);
-            res.setStatus(Status.unavailable);
+            res.setStatus(Status.Unavailable);
         }
 
         Product existingProduct = modelMapper.map(res, Product.class);
