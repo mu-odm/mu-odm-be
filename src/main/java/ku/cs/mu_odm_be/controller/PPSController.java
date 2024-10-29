@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/pps")
@@ -32,5 +33,10 @@ public class PPSController {
     @GetMapping
     public List<PPSResponse> getAllPPS() {
         return ppsService.getAllPPS();
+    }
+
+    @GetMapping
+    public List<PPSResponse> getAllSizeByProduct(@RequestParam UUID product_id) {
+        return ppsService.getAllSizeByProduct(product_id);
     }
 }

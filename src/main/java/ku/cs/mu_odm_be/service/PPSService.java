@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class PPSService {
@@ -50,5 +51,13 @@ public class PPSService {
                 .map(pps -> modelMapper.map(pps, PPSResponse.class))
                 .toList();
     }
+
+    public List<PPSResponse> getAllSizeByProduct(UUID product_id) {
+        List<PPS> ppsList = ppsRepository.findAllByProductID(product_id);
+        return ppsList.stream()
+                .map(pps -> modelMapper.map(pps, PPSResponse.class))
+                .toList();
+    }
+
 
 }
