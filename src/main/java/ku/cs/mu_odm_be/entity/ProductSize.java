@@ -20,10 +20,6 @@ public class ProductSize {
     private String size;
     private double additional_price;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = true)
-    private Product product;
-
     @JsonIgnore
     @OneToMany(mappedBy = "product_size", fetch = FetchType.LAZY)
     private Set<PPS> pps = new HashSet<>();
