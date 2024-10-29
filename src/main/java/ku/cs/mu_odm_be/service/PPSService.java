@@ -53,7 +53,7 @@ public class PPSService {
     }
 
     public List<PPSResponse> getAllSizeByProduct(UUID product_id) {
-        List<PPS> ppsList = ppsRepository.findAllByProductID(product_id);
+        List<PPS> ppsList = ppsRepository.findAllByProductId(product_id);
         return ppsList.stream()
                 .map(pps -> modelMapper.map(pps, PPSResponse.class))
                 .toList();

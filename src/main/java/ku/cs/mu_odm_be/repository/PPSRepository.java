@@ -10,5 +10,5 @@ import java.util.UUID;
 
 @Repository
 public interface PPSRepository extends JpaRepository<PPS, PPSKey>{
-    List<PPS> findAllByProductID(UUID product_id);
+    List<PPS> findAllByProductId(UUID product_id);
 }
