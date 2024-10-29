@@ -47,6 +47,10 @@ public class PPSService {
 
     public List<PPSResponse> getAllPPS() {
         List<PPS> ppsList = ppsRepository.findAll();
+        for (PPS pps : ppsList) {
+            pps.setProduct(productRepository.findById(pps.getId().getProduct_id()).orElse(null));
+            pps.setProduct_size(productSizeRepository.findById(pps.getId().getProduct_size_id()).orElse(null));
+        }
         return ppsList.stream()
                 .map(pps -> modelMapper.map(pps, PPSResponse.class))
                 .toList();
@@ -54,6 +58,10 @@ public class PPSService {
 
     public List<PPSResponse> getAllSizeByProduct(UUID product_id) {
         List<PPS> ppsList = ppsRepository.findAllByProductId(product_id);
+        for (PPS pps : ppsList) {
+            pps.setProduct(productRepository.findById(pps.getId().getProduct_id()).orElse(null));
+            pps.setProduct_size(productSizeRepository.findById(pps.getId().getProduct_size_id()).orElse(null));
+        }
         return ppsList.stream()
                 .map(pps -> modelMapper.map(pps, PPSResponse.class))
                 .toList();
