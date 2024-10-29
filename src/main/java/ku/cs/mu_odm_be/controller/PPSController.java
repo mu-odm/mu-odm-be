@@ -35,7 +35,7 @@ public class PPSController {
         return ppsService.getAllPPS();
     }
 
-    @GetMapping
+    @GetMapping("/product")
     public List<PPSResponse> getAllSizeByProduct(@RequestParam UUID product_id) {
         return ppsService.getAllSizeByProduct(product_id);
     }
