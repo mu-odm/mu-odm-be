@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.service;
 
 import ku.cs.mu_odm_be.entity.PPS;
+import ku.cs.mu_odm_be.entity.PPSKey;
 import ku.cs.mu_odm_be.entity.Product;
 import ku.cs.mu_odm_be.entity.ProductSize;
 import ku.cs.mu_odm_be.repository.PPSRepository;
@@ -36,6 +37,8 @@ public class PPSService {
         pps.setProduct(product);
         ProductSize productSize = productSizeRepository.findById(req.getProduct_size_id()).orElse(null);
         pps.setProduct_size(productSize);
+
+        pps.setId(new PPSKey(req.getProduct_id(), req.getProduct_size_id()));
 
         ppsRepository.save(pps);
         return modelMapper.map(pps, PPSResponse.class);
