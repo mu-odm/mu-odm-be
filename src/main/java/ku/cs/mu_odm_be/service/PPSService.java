@@ -1,14 +1,12 @@
 package ku.cs.mu_odm_be.service;
 
-import ku.cs.mu_odm_be.entity.PPS;
-import ku.cs.mu_odm_be.entity.PPSKey;
-import ku.cs.mu_odm_be.entity.Product;
-import ku.cs.mu_odm_be.entity.ProductSize;
+import ku.cs.mu_odm_be.entity.*;
 import ku.cs.mu_odm_be.repository.PPSRepository;
 import ku.cs.mu_odm_be.repository.ProductRepository;
 import ku.cs.mu_odm_be.repository.ProductSizeRepository;
 import ku.cs.mu_odm_be.request.PPSRequest;
 import ku.cs.mu_odm_be.response.PPSResponse;
+import ku.cs.mu_odm_be.response.PurchaseProductResponse;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,32 +29,22 @@ public class PPSService {
     @Autowired
     private ProductSizeRepository productSizeRepository;
 
-    public PPSResponse createPPS(PPSRequest req) {
-        PPS pps = modelMapper.map(req, PPS.class);
-
-        Product product = productRepository.findById(req.getProduct_id()).orElse(null);
-        pps.setProduct(product);
-        ProductSize productSize = productSizeRepository.findById(req.getProduct_size_id()).orElse(null);
-        pps.setProduct_size(productSize);
-
+    public PPS createPPS(PPSRequest req) {
+        PPS pps = new PPS();
         pps.setId(new PPSKey(req.getProduct_id(), req.getProduct_size_id()));
+        pps.setProduct(productRepository.findById(req.getProduct_id()).get());
+        pps.setProduct_size(productSizeRepository.findById(req.getProduct_size_id()).get());
 
-        ppsRepository.save(pps);
-        return modelMapper.map(pps, PPSResponse.class);
+        return ppsRepository.save(pps);
+
     }
 
-    public List<PPSResponse> getAllPPS() {
-        List<PPS> pps = ppsRepository.findAll();
-        return pps.stream()
-                .map(pps1 -> modelMapper.map(pps1, PPSResponse.class))
-                .collect(java.util.stream.Collectors.toList());
+    public List<PPS> getAllPPS() {
+        return ppsRepository.findAll();
     }
 
-    public List<PPSResponse> getAllSizeByProduct(UUID product_id) {
-        List<PPS> pps = ppsRepository.findAllByProductId(product_id);
-        return pps.stream()
-                .map(pps1 -> modelMapper.map(pps1, PPSResponse.class))
-                .collect(java.util.stream.Collectors.toList());
+    public List<PPS> getAllSizeByProduct(UUID product_id) {
+        return ppsRepository.findAllByProductId(product_id);
     }
 
 

@@ -22,7 +22,7 @@ public class PPSController {
     PPSService ppsService;
 
     @PostMapping
-    public PPSResponse createPPS (@RequestBody PPSRequest req, BindingResult result) {
+    public PPS createPPS (@RequestBody PPSRequest req, BindingResult result) {
 
         if (result.hasErrors())
             return null;
@@ -31,12 +31,12 @@ public class PPSController {
     }
 
     @GetMapping
-    public List<PPSResponse> getAllPPS() {
+    public List<PPS> getAllPPS() {
         return ppsService.getAllPPS();
     }
 
     @GetMapping("/product")
-    public List<PPSResponse> getAllSizeByProduct(@RequestParam UUID product_id) {
+    public List<PPS> getAllSizeByProduct(@RequestParam UUID product_id) {
         return ppsService.getAllSizeByProduct(product_id);
     }
 }
