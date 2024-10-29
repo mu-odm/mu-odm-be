@@ -29,22 +29,24 @@ public class PPSService {
     @Autowired
     private ProductSizeRepository productSizeRepository;
 
-    public PPS createPPS(PPSRequest req) {
+    public PPSResponse createPPS(PPSRequest req) {
         PPS pps = new PPS();
         pps.setId(new PPSKey(req.getProduct_id(), req.getProduct_size_id()));
         pps.setProduct(productRepository.findById(req.getProduct_id()).get());
         pps.setProduct_size(productSizeRepository.findById(req.getProduct_size_id()).get());
 
-        return ppsRepository.save(pps);
+        return modelMapper.map(ppsRepository.save(pps), PPSResponse.class);
 
     }
 
-    public List<PPS> getAllPPS() {
-        return ppsRepository.findAll();
+    public List<PPSResponse> getAllPPS() {
+        List<PPS> ppsList = ppsRepository.findAll();
+        return ppsList.stream().map(pps -> modelMapper.map(pps, PPSResponse.class)).toList();
     }
 
-    public List<PPS> getAllSizeByProduct(UUID product_id) {
-        return ppsRepository.findAllByProductId(product_id);
+    public List<PPSResponse> getAllSizeByProduct(UUID product_id) {
+        List<PPS> ppsList = ppsRepository.findByProductId(product_id);
+        return ppsList.stream().map(pps -> modelMapper.map(pps, PPSResponse.class)).toList();
     }
 
 
