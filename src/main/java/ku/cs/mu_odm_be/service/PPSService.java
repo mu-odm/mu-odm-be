@@ -45,22 +45,18 @@ public class PPSService {
         return modelMapper.map(pps, PPSResponse.class);
     }
 
-    public List<PPS> getAllPPS() {
-        List<PPS> ppsList = ppsRepository.findAll();
-        for (PPS pps : ppsList) {
-            pps.setProduct(productRepository.findById(pps.getId().getProduct_id()).orElse(null));
-            pps.setProduct_size(productSizeRepository.findById(pps.getId().getProduct_size_id()).orElse(null));
-        }
-        return ppsList;
+    public List<PPSResponse> getAllPPS() {
+        List<PPS> pps = ppsRepository.findAll();
+        return pps.stream()
+                .map(pps1 -> modelMapper.map(pps1, PPSResponse.class))
+                .collect(java.util.stream.Collectors.toList());
     }
 
-    public List<PPS> getAllSizeByProduct(UUID product_id) {
-        List<PPS> ppsList = ppsRepository.findAllByProductId(product_id);
-        for (PPS pps : ppsList) {
-            pps.setProduct(productRepository.findById(pps.getId().getProduct_id()).orElse(null));
-            pps.setProduct_size(productSizeRepository.findById(pps.getId().getProduct_size_id()).orElse(null));
-        }
-        return ppsList;
+    public List<PPSResponse> getAllSizeByProduct(UUID product_id) {
+        List<PPS> pps = ppsRepository.findAllByProductId(product_id);
+        return pps.stream()
+                .map(pps1 -> modelMapper.map(pps1, PPSResponse.class))
+                .collect(java.util.stream.Collectors.toList());
     }
 
 
