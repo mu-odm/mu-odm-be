@@ -12,7 +12,4 @@ public class ProductSizeRequest {
 
     @NotBlank
     private double additional_price;
-
-    @NotBlank
-    private UUID product_id;
 }

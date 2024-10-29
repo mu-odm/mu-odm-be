@@ -75,9 +75,13 @@ public class PurchaseProductService {
         String sub = decodeJWT(token);
 
         User user = userRepository.findByEmail(sub);
+        Product product = productRepository.findByid(req.getProductID());
+
+        if (product.getStatus() != Status.Available){
+            throw new RuntimeException("Product is not available");
+        }
 
         Purchase purchase = getCurrentPurchase(req.getClientID(), user);
-        Product product = productRepository.findByid(req.getProductID());
 
         PurchaseProduct purchaseProduct = new PurchaseProduct();
         purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), product.getId()));

@@ -28,12 +28,8 @@ public class ProductSizeService {
 
     public ProductSizeResponse createProductSize(ProductSizeRequest req) {
         ProductSize productSize = modelMapper.map(req, ProductSize.class);
-        Product product = productRepository.findById(req.getProduct_id()).get();
-        productSize.setProduct(product);
         productSizeRepository.save(productSize);
-
         ProductSizeResponse response = modelMapper.map(productSize, ProductSizeResponse.class);
-        response.setProduct_id(product.getId());
 
         return response;
     }
@@ -42,9 +38,8 @@ public class ProductSizeService {
         return productSizeRepository.findById(id).get();
     }
 
-    public List<ProductSizeResponse> getProductSize(UUID productID) {
-        Product product = productRepository.findById(productID).get();
-        List<ProductSize> productSizes = productSizeRepository.findByProductId(product.getId());
+    public List<ProductSizeResponse> getAllProductSizes() {
+        List<ProductSize> productSizes = productSizeRepository.findAll();
         return productSizes.stream()
                 .map(productSize -> modelMapper.map(productSize, ProductSizeResponse.class))
                 .collect(java.util.stream.Collectors.toList());

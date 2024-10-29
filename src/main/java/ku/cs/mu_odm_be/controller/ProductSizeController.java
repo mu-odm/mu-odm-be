@@ -19,8 +19,8 @@ public class ProductSizeController {
     @PostMapping
     public ProductSizeResponse createProductSize(@RequestBody ProductSizeRequest req) {return productSizeService.createProductSize(req);}
 
-    @GetMapping("/product")
-    public List<ProductSizeResponse> getProductSize(@RequestParam UUID productID) {return productSizeService.getProductSize(productID);}
+    @GetMapping
+    public List<ProductSizeResponse> getAllProductSizes() {return productSizeService.getAllProductSizes();}
 
     @DeleteMapping("/product_size")
     public void deleteProductSize(@RequestParam UUID id) {productSizeService.deleteProductSize(id);}

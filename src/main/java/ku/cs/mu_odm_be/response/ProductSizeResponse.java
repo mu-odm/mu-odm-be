@@ -9,5 +9,4 @@ public class ProductSizeResponse {
     private UUID id;
     private String size;
     private double additional_price;
-    private UUID product_id;
 }
