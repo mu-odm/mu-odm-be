@@ -1,7 +1,11 @@
 package ku.cs.mu_odm_be.service;
 
 import ku.cs.mu_odm_be.entity.PPS;
+import ku.cs.mu_odm_be.entity.Product;
+import ku.cs.mu_odm_be.entity.ProductSize;
 import ku.cs.mu_odm_be.repository.PPSRepository;
+import ku.cs.mu_odm_be.repository.ProductRepository;
+import ku.cs.mu_odm_be.repository.ProductSizeRepository;
 import ku.cs.mu_odm_be.request.PPSRequest;
 import ku.cs.mu_odm_be.response.PPSResponse;
 import org.modelmapper.ModelMapper;
@@ -19,9 +23,22 @@ public class PPSService {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private ProductSizeRepository productSizeRepository;
+
     public PPSResponse createPPS(PPSRequest req) {
         PPS pps = modelMapper.map(req, PPS.class);
-        return modelMapper.map(ppsRepository.save(pps), PPSResponse.class);
+
+        Product product = productRepository.findById(req.getProduct_id()).orElse(null);
+        pps.setProduct(product);
+        ProductSize productSize = productSizeRepository.findById(req.getProduct_size_id()).orElse(null);
+        pps.setProduct_size(productSize);
+
+        ppsRepository.save(pps);
+        return modelMapper.map(pps, PPSResponse.class);
     }
 
     public List<PPSResponse> getAllPPS() {
