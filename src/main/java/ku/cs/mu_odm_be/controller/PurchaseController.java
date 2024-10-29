@@ -2,6 +2,7 @@ package ku.cs.mu_odm_be.controller;
 
 import ku.cs.mu_odm_be.common.PurchasApproval;
 import ku.cs.mu_odm_be.entity.Purchase;
+import ku.cs.mu_odm_be.request.PurchaseApprovalRequest;
 import ku.cs.mu_odm_be.response.PurchaseResponse;
 import ku.cs.mu_odm_be.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class PurchaseController {
     }
 
     @PutMapping("/purchase")
-    public PurchaseResponse updatePurchase(@RequestParam UUID purchaseID, @RequestBody PurchasApproval status) {
-        return purchaseService.updatePurchase(purchaseID, status);
+    public PurchaseResponse updatePurchase(@RequestParam UUID purchaseID, @RequestBody PurchaseApprovalRequest req) {
+        return purchaseService.updatePurchase(purchaseID, req);
     }
 }
