@@ -10,6 +10,6 @@ import java.util.UUID;
 @Data
 public class PPSResponse {
     private PPSKey id;
-    private UUID product_id;
-    private UUID product_size_id;
+    private Product product;
+    private ProductSize productSize;
 }
