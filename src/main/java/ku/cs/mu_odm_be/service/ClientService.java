@@ -63,9 +63,9 @@ public class ClientService {
         return modelMapper.map(clientRepository.findByEmail(email), ClientResponse.class);
     }
 
-    public ClientResponse updateClient(String email, boolean isDefer) {
+    public ClientResponse updateClient(String email, ClientRequest req) {
         Client client = clientRepository.findByEmail(email);
-        client.setDeferStatus(isDefer);
+        client.setDeferStatus(req.isDeferStatus());
         return modelMapper.map(clientRepository.save(client), ClientResponse.class);
     }
 }

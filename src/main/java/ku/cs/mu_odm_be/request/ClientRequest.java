@@ -22,4 +22,7 @@ public class ClientRequest {
     @NotBlank
     private String contact;
 
+    @NotBlank
+    private boolean isDeferStatus;
+
 }

@@ -48,8 +48,8 @@ public class ClientController {
     }
 
     @PutMapping("/email")
-    public ClientResponse updateClient(@RequestParam String email, @RequestBody boolean isDeferStatus) {
-        return clientService.updateClient(email, isDeferStatus);
+    public ClientResponse updateClient(@RequestParam String email, @RequestBody ClientRequest req) {
+        return clientService.updateClient(email, req);
     }
 
 }
