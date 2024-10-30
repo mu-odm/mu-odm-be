@@ -78,9 +78,9 @@ public class PurchaseProductService {
         String sub = decodeJWT(token);
 
         User user = userRepository.findByEmail(sub);
-        Product product = productRepository.findByid(req.getProduct_id());
+        PPS pps = ppsRepository.findById(new PPSKey(req.getProduct_id(), req.getProduct_size_id())).get();
 
-        if (product.getStatus() != Status.Available){
+        if (pps.getStatus() != Status.Available){
             throw new RuntimeException("Product is not available");
         }
 
@@ -91,10 +91,9 @@ public class PurchaseProductService {
         PurchaseProduct purchaseProduct = new PurchaseProduct();
         purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), ppsKey));
         purchaseProduct.setAmount(req.getAmount());
-//        purchaseProduct.setProduct(product);
         purchaseProduct.setPurchase(purchase);
 
-        if (product.getRemaining() < req.getAmount()){
+        if (pps.getRemaining() < req.getAmount()){
             throw new RuntimeException("Not enough stock");
         }
 
