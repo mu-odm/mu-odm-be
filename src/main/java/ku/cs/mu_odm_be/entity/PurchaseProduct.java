@@ -12,10 +12,10 @@ public class PurchaseProduct {
 
     private int amount;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("product_id")
-    @JoinColumn(name = "product_id")
-    private Product product;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @MapsId("product_id")
+//    @JoinColumn(name = "product_id")
+//    private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("purchase_id")
