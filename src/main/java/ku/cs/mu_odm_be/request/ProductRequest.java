@@ -10,6 +10,9 @@ public class ProductRequest {
     private String name;
 
     @NotBlank
+    private String image;
+
+    @NotBlank
     private double price;
 
     @NotBlank
@@ -17,4 +20,6 @@ public class ProductRequest {
 
     @NotBlank
     private int remaining;
+
+
 }
