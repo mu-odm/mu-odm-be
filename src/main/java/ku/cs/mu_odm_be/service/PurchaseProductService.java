@@ -41,6 +41,9 @@ public class PurchaseProductService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PPSRepository ppsRepository;
+
     public Purchase getCurrentPurchase(UUID cID, User user){
         Order order = orderService.getExistOrder(Status.Available, user.getRegion());
         if (order == null){
@@ -86,14 +89,14 @@ public class PurchaseProductService {
         PurchaseProduct purchaseProduct = new PurchaseProduct();
         purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), product.getId()));
         purchaseProduct.setAmount(req.getAmount());
-        purchaseProduct.setProduct(product);
+//        purchaseProduct.setProduct(product);
         purchaseProduct.setPurchase(purchase);
 
         if (product.getRemaining() < req.getAmount()){
             throw new RuntimeException("Not enough stock");
         }
 
-        purchaseProduct.setPps_id(req.getPps_id());
+        purchaseProduct.setPps(ppsRepository.findById(req.getPps_id()).get());
 
         purchaseProductRepository.save(purchaseProduct);
         return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);

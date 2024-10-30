@@ -12,15 +12,18 @@ public class PurchaseProduct {
 
     private int amount;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("product_id")
-    @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private Product product;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @MapsId("product_id")
+//    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+//    private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("purchase_id")
     @JoinColumn(name = "purchase_id")
     private Purchase purchase;
 
-    private PPSKey pps_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("pps_id")
+    @JoinColumn(name = "pps_id")
+    private PPS pps;
 }
