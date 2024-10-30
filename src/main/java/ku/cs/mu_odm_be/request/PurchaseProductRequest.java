@@ -24,6 +24,5 @@ public class PurchaseProductRequest {
     @NotBlank
     private UUID product_size_id;
 
-    @NotBlank
-    private UUID purchase_id;
+
 }

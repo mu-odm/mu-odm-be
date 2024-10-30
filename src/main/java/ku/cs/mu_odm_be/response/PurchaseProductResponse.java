@@ -9,9 +9,7 @@ import java.util.UUID;
 @Data
 public class PurchaseProductResponse {
     private PurchaseProductKey id;
-//    private UUID productID;
     private UUID clientID;
     private int amount;
 
-    private PPSKey pps_id;
 }

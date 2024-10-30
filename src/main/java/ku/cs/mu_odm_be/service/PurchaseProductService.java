@@ -101,7 +101,9 @@ public class PurchaseProductService {
         purchaseProduct.setPps(ppsRepository.findById(ppsKey).get());
 
         purchaseProductRepository.save(purchaseProduct);
-        return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
+        PurchaseProductResponse res = modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
+        res.setClientID(req.getClientID());
+        return res;
     }
 
     public List<PurchaseProductResponse> getAllPurchaseProduct(){
