@@ -86,7 +86,7 @@ public class PurchaseProductService {
         PurchaseProduct purchaseProduct = new PurchaseProduct();
         purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), product.getId()));
         purchaseProduct.setAmount(req.getAmount());
-//        purchaseProduct.setProduct(product);
+        purchaseProduct.setProduct(product);
         purchaseProduct.setPurchase(purchase);
 
         if (product.getRemaining() < req.getAmount()){
