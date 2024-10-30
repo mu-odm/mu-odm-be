@@ -19,4 +19,8 @@ public class PurchaseProductKey implements Serializable {
 
     @Column(name = "product_id")
     private UUID product_id;
+
+    @Column(name = "pps_id")
+    private UUID pps_id;
+
 }
