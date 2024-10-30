@@ -14,7 +14,7 @@ import java.util.UUID;
 public interface PurchaseRepository extends JpaRepository<Purchase, UUID> {
     List<Purchase> findAllByClientId(UUID clientId);
 
-    Purchase findByOrderIdAndClientId(UUID orderId, UUID clientId);
+    List<Purchase> findByOrderIdAndClientId(UUID orderId, UUID clientId);
 
     @Query("SELECT p FROM Purchase p WHERE p.client.id = :clientId AND p.id = :purchaseId")
     Optional<Purchase> findByClientIdAndPurchaseId(@Param("clientId") UUID clientId, @Param("purchaseId") UUID purchaseId);

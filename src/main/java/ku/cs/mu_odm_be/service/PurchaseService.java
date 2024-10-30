@@ -42,7 +42,7 @@ public class PurchaseService {
     public List<Purchase> getAllPurchaseByClientId(UUID id) {
         return purchaseRepository.findAllByClientId(id);
     }
-    public Purchase getPurchaseByOrderIdAndClientId(UUID orderId, UUID clientId) {
+    public List<Purchase> getPurchaseByOrderIdAndClientId(UUID orderId, UUID clientId) {
         return purchaseRepository.findByOrderIdAndClientId(orderId, clientId);
     }
 

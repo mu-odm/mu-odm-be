@@ -50,12 +50,20 @@ public class PurchaseProductService {
             order = orderService.createOrder(user);
         }
 
-        Purchase purchase = purchaseService.getPurchaseByOrderIdAndClientId(
+        List<Purchase> purchases = purchaseService.getPurchaseByOrderIdAndClientId(
                 order.getId(),
                 cID
         );
 
-        if (purchase == null || purchase.getStatus() != PurchasApproval.Pending){
+        Purchase purchase = null;
+        for (Purchase p : purchases){
+            if (p.getStatus() == PurchasApproval.Pending){
+                purchase = p;
+                break;
+            }
+        }
+
+        if (purchase == null){
             Purchase newPurchase = new Purchase();
             newPurchase.setOrder(order);
             newPurchase.setClient(clientRepository.findById(cID).get());
