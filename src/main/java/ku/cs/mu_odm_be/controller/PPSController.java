@@ -39,4 +39,12 @@ public class PPSController {
     public List<PPSResponse> getAllSizeByProduct(@RequestParam UUID product_id) {
         return ppsService.getAllSizeByProduct(product_id);
     }
+
+    @PutMapping("/product-productSize")
+    public PPSResponse updatePPS(@RequestBody PPSRequest req, BindingResult result) {
+        if (result.hasErrors())
+            return null;
+
+        return ppsService.updatePPS(req);
+    }
 }

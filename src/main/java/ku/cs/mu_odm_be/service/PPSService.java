@@ -60,6 +60,13 @@ public class PPSService {
         return ppsList.stream().map(pps -> modelMapper.map(pps, PPSResponse.class)).toList();
     }
 
+    public PPSResponse updatePPS(PPSRequest req) {
+        PPS pps = ppsRepository.findById(new PPSKey(req.getProduct_id(), req.getProduct_size_id())).get();
+        pps.setRemaining(req.getRemaining());
+        pps.setStatus(req.getStatus());
+        return modelMapper.map(ppsRepository.save(pps), PPSResponse.class);
+    }
+
 
 
 }
