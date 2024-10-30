@@ -20,6 +20,7 @@ public class Product {
     private UUID id;
     private String name;
     private double price;
+    private String image;
 
     @JsonIgnore
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
