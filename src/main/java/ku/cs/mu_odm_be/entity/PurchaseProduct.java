@@ -21,4 +21,6 @@ public class PurchaseProduct {
     @MapsId("purchase_id")
     @JoinColumn(name = "purchase_id")
     private Purchase purchase;
+
+    private PPSKey pps_id;
 }

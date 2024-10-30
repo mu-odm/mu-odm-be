@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.request;
 
 import jakarta.validation.constraints.NotBlank;
+import ku.cs.mu_odm_be.entity.PPSKey;
 import lombok.Data;
 
 import java.util.UUID;
@@ -16,4 +17,7 @@ public class PurchaseProductRequest {
 
     @NotBlank
     private int amount;
+
+    @NotBlank
+    private PPSKey pps_id;
 }

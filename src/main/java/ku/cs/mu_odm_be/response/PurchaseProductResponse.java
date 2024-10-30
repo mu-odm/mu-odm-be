@@ -1,5 +1,6 @@
 package ku.cs.mu_odm_be.response;
 
+import ku.cs.mu_odm_be.entity.PPSKey;
 import ku.cs.mu_odm_be.entity.PurchaseProductKey;
 import lombok.Data;
 
@@ -11,4 +12,6 @@ public class PurchaseProductResponse {
     private UUID productID;
     private UUID clientID;
     private int amount;
+
+    private PPSKey pps_id;
 }

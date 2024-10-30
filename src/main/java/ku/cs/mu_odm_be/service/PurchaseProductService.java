@@ -93,6 +93,8 @@ public class PurchaseProductService {
             throw new RuntimeException("Not enough stock");
         }
 
+        purchaseProduct.setPps_id(req.getPps_id());
+
         purchaseProductRepository.save(purchaseProduct);
         return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
     }
