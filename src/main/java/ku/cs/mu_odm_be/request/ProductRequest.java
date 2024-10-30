@@ -9,15 +9,6 @@ public class ProductRequest {
     @NotBlank
     private String name;
 
-
     @NotBlank
     private double price;
-
-    @NotBlank
-    private Status status;
-
-    @NotBlank
-    private int remaining;
-
-
 }

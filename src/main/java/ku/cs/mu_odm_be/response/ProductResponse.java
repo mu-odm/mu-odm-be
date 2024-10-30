@@ -10,6 +10,5 @@ public class ProductResponse {
     private UUID id;
     private String name;
     private double price;
-    private Status status;
-    private int remaining;
+
 }

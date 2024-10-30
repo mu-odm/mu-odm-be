@@ -1,6 +1,7 @@
 package ku.cs.mu_odm_be.entity;
 
 import jakarta.persistence.*;
+import ku.cs.mu_odm_be.common.Status;
 import lombok.Data;
 
 @Entity
@@ -19,4 +20,8 @@ public class PPS {
     @MapsId("product_size_id")
     @JoinColumn(name = "product_size_id")
     private ProductSize product_size;
+
+    private int remaining;
+    private Status status;
+
 }

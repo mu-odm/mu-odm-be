@@ -20,15 +20,4 @@ public class Product {
     private UUID id;
     private String name;
     private double price;
-
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-//    private Set<PurchaseProduct> purchase_products = new HashSet<>();
-
-    private Status status;
-    private int remaining;
-
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "product_id", fetch = FetchType.LAZY)
-//    private Set<PPS> pps = new HashSet<>();
 }

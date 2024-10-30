@@ -1,5 +1,6 @@
 package ku.cs.mu_odm_be.service;
 
+import ku.cs.mu_odm_be.common.Status;
 import ku.cs.mu_odm_be.entity.*;
 import ku.cs.mu_odm_be.repository.PPSRepository;
 import ku.cs.mu_odm_be.repository.ProductRepository;
@@ -34,6 +35,16 @@ public class PPSService {
         pps.setId(new PPSKey(req.getProduct_id(), req.getProduct_size_id()));
         pps.setProduct(productRepository.findById(req.getProduct_id()).get());
         pps.setProduct_size(productSizeRepository.findById(req.getProduct_size_id()).get());
+        pps.setRemaining(req.getRemaining());
+
+        if (req.getRemaining() > 0 && req.getStatus() != null) {
+            pps.setRemaining(req.getRemaining());
+            pps.setStatus(req.getStatus());
+        }
+        else if (req.getRemaining() <= 0) {
+            pps.setRemaining(0);
+            pps.setStatus(Status.Unavailable);
+        }
 
         return modelMapper.map(ppsRepository.save(pps), PPSResponse.class);
 

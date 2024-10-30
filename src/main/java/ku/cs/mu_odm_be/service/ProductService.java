@@ -41,15 +41,6 @@ public class ProductService {
             res.setPrice(req.getPrice());
         }
 
-        if (req.getRemaining() > 0 && req.getStatus() != null) {
-            res.setRemaining(req.getRemaining());
-            res.setStatus(req.getStatus());
-        }
-        else if (req.getRemaining() <= 0) {
-            res.setRemaining(0);
-            res.setStatus(Status.Unavailable);
-        }
-
         Product existingProduct = modelMapper.map(res, Product.class);
         productRepository.save(existingProduct);
         return modelMapper.map(existingProduct, ProductResponse.class);
