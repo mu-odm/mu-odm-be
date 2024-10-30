@@ -19,5 +19,11 @@ public class PurchaseProductRequest {
     private int amount;
 
     @NotBlank
-    private PPSKey pps_id;
+    private UUID product_id;
+
+    @NotBlank
+    private UUID product_size_id;
+
+    @NotBlank
+    private UUID purchase_id;
 }

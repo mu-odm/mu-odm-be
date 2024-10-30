@@ -21,6 +21,7 @@ public class PurchaseProductKey implements Serializable {
 //    private UUID product_id;
 
     @Column(name = "pps_id")
-    private UUID pps_id;
+    private PPSKey pps_id;
+
 
 }

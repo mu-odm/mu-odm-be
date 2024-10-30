@@ -78,7 +78,7 @@ public class PurchaseProductService {
         String sub = decodeJWT(token);
 
         User user = userRepository.findByEmail(sub);
-        Product product = productRepository.findByid(req.getPps_id().getProduct_id());
+        Product product = productRepository.findByid(req.getProduct_id());
 
         if (product.getStatus() != Status.Available){
             throw new RuntimeException("Product is not available");
@@ -86,8 +86,10 @@ public class PurchaseProductService {
 
         Purchase purchase = getCurrentPurchase(req.getClientID(), user);
 
+        PPSKey ppsKey = new PPSKey(req.getProduct_id(), req.getProduct_size_id());
+
         PurchaseProduct purchaseProduct = new PurchaseProduct();
-        purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), product.getId()));
+        purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), ppsKey));
         purchaseProduct.setAmount(req.getAmount());
 //        purchaseProduct.setProduct(product);
         purchaseProduct.setPurchase(purchase);
@@ -96,7 +98,7 @@ public class PurchaseProductService {
             throw new RuntimeException("Not enough stock");
         }
 
-        purchaseProduct.setPps(ppsRepository.findById(req.getPps_id()).get());
+        purchaseProduct.setPps(ppsRepository.findById(ppsKey).get());
 
         purchaseProductRepository.save(purchaseProduct);
         return modelMapper.map(purchaseProduct, PurchaseProductResponse.class);
