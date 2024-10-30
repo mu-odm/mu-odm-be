@@ -47,7 +47,13 @@ public class OrderService {
     }
 
     public Order getExistOrder(Status status, Region region) {
-        return orderRepository.findByRegionAndStatus(region, status);
+        List<Order> orders =orderRepository.findAll();
+        for (Order order : orders) {
+            if (order.getStatus() == status && order.getRegion() == region) {
+                return order;
+            }
+        }
+        return null;
     }
 
     public OrderResponse updateOrder(UUID orderID, OrderRequest req) {
