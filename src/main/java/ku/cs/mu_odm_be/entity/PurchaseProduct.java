@@ -24,6 +24,9 @@ public class PurchaseProduct {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("pps_id")
-//    @JoinColumn(name = "pps_id")
+    @JoinColumns({
+            @JoinColumn(name = "pps_product_id", referencedColumnName = "product_id"),
+            @JoinColumn(name = "pps_product_size_id", referencedColumnName = "product_size_id")
+    })
     private PPS pps;
 }
