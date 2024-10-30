@@ -9,6 +9,7 @@ public class ProductRequest {
     @NotBlank
     private String name;
 
+
     @NotBlank
     private double price;
 
@@ -17,4 +18,6 @@ public class ProductRequest {
 
     @NotBlank
     private int remaining;
+
+
 }
