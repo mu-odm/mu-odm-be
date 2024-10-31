@@ -100,6 +100,7 @@ public class PurchaseProductService {
         purchaseProduct.setId(new PurchaseProductKey(purchase.getId(), ppsKey));
         purchaseProduct.setAmount(req.getAmount());
         purchaseProduct.setPurchase(purchase);
+        purchaseProduct.setClientID(req.getClientID());
 
         if (pps.getRemaining() < req.getAmount()){
             throw new RuntimeException("Not enough stock");
