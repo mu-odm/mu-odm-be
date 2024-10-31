@@ -1,0 +1,4346 @@
+2024-10-31T20:26:10.969+07:00  INFO 2596 --- [restartedMain] ku.cs.mu_odm_be.MuOdmBeApplication       : Starting MuOdmBeApplication using Java 21.0.4 with PID 2596 (C:\Users\xepon\OneDrive\Desktop\Github\my_hw\sa\mu-odm-be\target\classes started by xepon in C:\Users\xepon\OneDrive\Desktop\Github\my_hw\sa\mu-odm-be)
+2024-10-31T20:26:10.972+07:00  INFO 2596 --- [restartedMain] ku.cs.mu_odm_be.MuOdmBeApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-31T20:26:11.033+07:00  INFO 2596 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-31T20:26:11.034+07:00  INFO 2596 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-31T20:26:12.258+07:00  INFO 2596 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-31T20:26:12.337+07:00  INFO 2596 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 8 JPA repository interfaces.
+2024-10-31T20:26:13.036+07:00  INFO 2596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8092 (http)
+2024-10-31T20:26:13.050+07:00  INFO 2596 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-31T20:26:13.051+07:00  INFO 2596 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-10-31T20:26:13.112+07:00  INFO 2596 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-31T20:26:13.112+07:00  INFO 2596 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2078 ms
+2024-10-31T20:26:13.326+07:00  INFO 2596 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-31T20:26:13.421+07:00  INFO 2596 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-31T20:26:13.493+07:00  INFO 2596 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-31T20:26:13.829+07:00  INFO 2596 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-31T20:26:13.858+07:00  INFO 2596 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-31T20:26:14.609+07:00  INFO 2596 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@37d75e8f
+2024-10-31T20:26:14.610+07:00  INFO 2596 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-31T20:26:14.675+07:00  WARN 2596 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-31T20:26:15.738+07:00  INFO 2596 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-31T20:26:15.753+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists clients 
+       drop constraint if exists FKtiuqdledq2lybrds2k3rfqrv4
+2024-10-31T20:26:15.824+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:15.824+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "clients" does not exist, skipping
+2024-10-31T20:26:15.824+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists orders 
+       drop constraint if exists FK32ql8ubntj5uh44ph9659tiih
+2024-10-31T20:26:15.857+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:15.857+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
+2024-10-31T20:26:15.857+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pps 
+       drop constraint if exists FKpxyiyukw8kxpcu6ynitkboa3q
+2024-10-31T20:26:15.891+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:15.891+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "pps" does not exist, skipping
+2024-10-31T20:26:15.891+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pps 
+       drop constraint if exists FKotjbendm1ymvjxofxl55ux8xs
+2024-10-31T20:26:15.924+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:15.924+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "pps" does not exist, skipping
+2024-10-31T20:26:15.924+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchase_products 
+       drop constraint if exists FKt6noowfds0os2rqwoty1lf1ht
+2024-10-31T20:26:15.958+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:15.958+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "purchase_products" does not exist, skipping
+2024-10-31T20:26:15.958+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchase_products 
+       drop constraint if exists FKmy756cmoekybdi0db4pk8usg7
+2024-10-31T20:26:15.990+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:15.990+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "purchase_products" does not exist, skipping
+2024-10-31T20:26:15.990+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       drop constraint if exists FK7838l2kccypwmm5rpvl33gq9t
+2024-10-31T20:26:16.024+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.024+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "purchases" does not exist, skipping
+2024-10-31T20:26:16.025+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       drop constraint if exists FKgpwjwuv6yqoabjgy5hlokqmox
+2024-10-31T20:26:16.059+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.059+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "purchases" does not exist, skipping
+2024-10-31T20:26:16.059+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists clients cascade
+2024-10-31T20:26:16.092+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.092+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "clients" does not exist, skipping
+2024-10-31T20:26:16.092+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists orders cascade
+2024-10-31T20:26:16.124+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.124+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-10-31T20:26:16.124+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists pps cascade
+2024-10-31T20:26:16.158+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.158+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "pps" does not exist, skipping
+2024-10-31T20:26:16.158+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists product_sizes cascade
+2024-10-31T20:26:16.192+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.193+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_sizes" does not exist, skipping
+2024-10-31T20:26:16.193+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists products cascade
+2024-10-31T20:26:16.227+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.227+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "products" does not exist, skipping
+2024-10-31T20:26:16.228+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists purchase_products cascade
+2024-10-31T20:26:16.261+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.262+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "purchase_products" does not exist, skipping
+2024-10-31T20:26:16.262+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists purchases cascade
+2024-10-31T20:26:16.295+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.295+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "purchases" does not exist, skipping
+2024-10-31T20:26:16.296+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists users cascade
+2024-10-31T20:26:16.329+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-10-31T20:26:16.329+07:00  WARN 2596 --- [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-10-31T20:26:16.335+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table clients (
+        contract_year integer not null,
+        is_defer_status boolean not null,
+        id uuid not null,
+        user_id uuid,
+        contact varchar(255),
+        email varchar(255),
+        location varchar(255),
+        name varchar(255),
+        primary key (id)
+    )
+2024-10-31T20:26:16.401+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table orders (
+        region smallint check (region between 0 and 3),
+        status smallint check (status between 0 and 1),
+        id uuid not null,
+        user_id uuid,
+        primary key (id)
+    )
+2024-10-31T20:26:16.443+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table pps (
+        remaining integer not null,
+        status smallint check (status between 0 and 1),
+        product_id uuid not null,
+        product_size_id uuid not null,
+        primary key (product_id, product_size_id)
+    )
+2024-10-31T20:26:16.488+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table product_sizes (
+        additional_price float(53) not null,
+        id uuid not null,
+        size varchar(255),
+        primary key (id)
+    )
+2024-10-31T20:26:16.529+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table products (
+        price float(53) not null,
+        id uuid not null,
+        name varchar(255),
+        primary key (id)
+    )
+2024-10-31T20:26:16.567+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table purchase_products (
+        amount integer not null,
+        clientid uuid,
+        pps_product_id uuid not null,
+        pps_product_size_id uuid not null,
+        purchase_id uuid not null,
+        primary key (pps_product_id, pps_product_size_id, purchase_id)
+    )
+2024-10-31T20:26:16.607+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table purchases (
+        status smallint check (status between 0 and 2),
+        created_at timestamp(6),
+        clients_id uuid,
+        id uuid not null,
+        orders_id uuid,
+        primary key (id)
+    )
+2024-10-31T20:26:16.649+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    create table users (
+        region smallint check (region between 0 and 3),
+        id uuid not null,
+        email varchar(255) unique,
+        password varchar(255),
+        role varchar(255),
+        username varchar(255),
+        primary key (id)
+    )
+2024-10-31T20:26:16.696+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists clients 
+       add constraint FKtiuqdledq2lybrds2k3rfqrv4 
+       foreign key (user_id) 
+       references users
+2024-10-31T20:26:16.736+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists orders 
+       add constraint FK32ql8ubntj5uh44ph9659tiih 
+       foreign key (user_id) 
+       references users
+2024-10-31T20:26:16.774+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pps 
+       add constraint FKpxyiyukw8kxpcu6ynitkboa3q 
+       foreign key (product_id) 
+       references products
+2024-10-31T20:26:16.811+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists pps 
+       add constraint FKotjbendm1ymvjxofxl55ux8xs 
+       foreign key (product_size_id) 
+       references product_sizes
+2024-10-31T20:26:16.848+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchase_products 
+       add constraint FKt6noowfds0os2rqwoty1lf1ht 
+       foreign key (pps_product_id, pps_product_size_id) 
+       references pps
+2024-10-31T20:26:16.883+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchase_products 
+       add constraint FKmy756cmoekybdi0db4pk8usg7 
+       foreign key (purchase_id) 
+       references purchases
+2024-10-31T20:26:16.917+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       add constraint FK7838l2kccypwmm5rpvl33gq9t 
+       foreign key (clients_id) 
+       references clients
+2024-10-31T20:26:16.952+07:00 DEBUG 2596 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       add constraint FKgpwjwuv6yqoabjgy5hlokqmox 
+       foreign key (orders_id) 
+       references orders
+2024-10-31T20:26:16.991+07:00  INFO 2596 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-31T20:26:17.315+07:00  INFO 2596 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImp
+2024-10-31T20:26:17.467+07:00  INFO 2596 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-31T20:26:17.999+07:00  WARN 2596 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-31T20:26:18.646+07:00  INFO 2596 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-10-31T20:26:18.676+07:00  INFO 2596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8092 (http) with context path '/'
+2024-10-31T20:26:18.687+07:00  INFO 2596 --- [restartedMain] ku.cs.mu_odm_be.MuOdmBeApplication       : Started MuOdmBeApplication in 8.214 seconds (process running for 8.804)
+2024-10-31T20:26:59.511+07:00  INFO 2596 --- [http-nio-8092-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-31T20:26:59.511+07:00  INFO 2596 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-31T20:26:59.512+07:00  INFO 2596 --- [http-nio-8092-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-31T20:27:00.136+07:00  INFO 2596 --- [http-nio-8092-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 335 ms
+2024-10-31T20:29:00.316+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+2024-10-31T20:29:00.697+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (email, password, region, role, username, id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2024-10-31T20:29:06.964+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:29:07.278+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:29:10.502+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:29:10.502+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:29:10.502+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:29:10.577+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:29:10.578+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:29:10.579+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:30:28.117+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:28.435+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:31.134+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:31.209+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:30:41.302+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:41.372+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:30:47.579+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:47.669+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        product_sizes
+        (additional_price, size, id) 
+    values
+        (?, ?, ?)
+2024-10-31T20:30:47.786+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:47.822+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:30:59.363+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:59.433+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    insert 
+    into
+        product_sizes
+        (additional_price, size, id) 
+    values
+        (?, ?, ?)
+2024-10-31T20:30:59.535+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:30:59.606+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:31:11.745+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:11.783+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:11.818+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:31:11.850+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:31:27.672+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:27.983+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:29.018+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:29.099+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:31:31.967+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:32.007+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:32.050+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:32.067+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:31:32.104+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:31:32.123+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:31:42.496+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:42.581+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        products
+        (name, price, id) 
+    values
+        (?, ?, ?)
+2024-10-31T20:31:45.012+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:45.058+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:45.085+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:31:45.133+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2024-10-31T20:31:45.212+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0 
+    where
+        ps1_0.id=?
+2024-10-31T20:31:45.293+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T20:31:45.332+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        pps
+        (remaining, status, product_id, product_size_id) 
+    values
+        (?, ?, ?, ?)
+2024-10-31T20:31:49.342+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:49.374+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:49.397+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:31:49.410+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:31:49.441+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:31:49.467+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:32:03.887+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:32:03.958+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2024-10-31T20:32:04.047+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    update
+        products 
+    set
+        name=?,
+        price=? 
+    where
+        id=?
+2024-10-31T20:32:09.707+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:32:09.764+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:32:09.779+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:32:09.838+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:33:15.505+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:33:15.534+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:33:15.570+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:33:15.580+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:33:15.605+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:33:15.647+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:40:07.268+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:40:07.290+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:40:07.322+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:40:07.355+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:40:07.367+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:40:07.394+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:40:09.035+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:40:09.061+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:40:09.087+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:40:09.106+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:40:09.129+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:40:09.161+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:41:05.130+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:41:05.202+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    insert 
+    into
+        products
+        (name, price, id) 
+    values
+        (?, ?, ?)
+2024-10-31T20:41:08.253+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:41:08.307+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:41:08.333+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:41:08.375+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2024-10-31T20:41:08.443+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0 
+    where
+        ps1_0.id=?
+2024-10-31T20:41:08.520+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T20:41:08.562+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        pps
+        (remaining, status, product_id, product_size_id) 
+    values
+        (?, ?, ?, ?)
+2024-10-31T20:41:15.722+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:41:15.756+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:41:15.780+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:41:15.813+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:41:15.830+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:41:15.848+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:42:54.446+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:42:54.513+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2024-10-31T20:42:54.580+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    update
+        products 
+    set
+        name=?,
+        price=? 
+    where
+        id=?
+2024-10-31T20:44:01.904+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:44:01.939+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:44:01.973+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:44:02.007+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:44:57.562+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:44:57.647+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.id 
+    from
+        clients c1_0 
+    where
+        c1_0.email=? 
+    fetch
+        first ? rows only
+2024-10-31T20:44:57.692+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:44:57.728+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        clients
+        (contact, contract_year, email, is_defer_status, location, name, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2024-10-31T20:44:57.858+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:44:57.927+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:44:57.963+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:45:26.778+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:45:26.847+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0 
+    where
+        c1_0.email=?
+2024-10-31T20:45:26.883+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:45:26.918+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    update
+        clients 
+    set
+        contact=?,
+        contract_year=?,
+        email=?,
+        is_defer_status=?,
+        location=?,
+        name=?,
+        user_id=? 
+    where
+        id=?
+2024-10-31T20:45:27.031+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:45:27.101+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:45:27.134+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:46:17.710+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:46:17.735+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:46:17.759+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:46:17.785+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:46:17.818+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:46:17.823+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:47:33.016+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:47:33.040+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:47:33.068+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:47:33.088+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:47:33.094+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:47:33.109+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:47:33.134+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:47:33.164+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:47:33.165+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:47:33.172+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:47:33.207+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:48:16.546+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:48:16.569+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:48:16.603+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:48:16.624+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:48:16.637+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:48:16.641+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:48:16.669+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:48:16.694+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:49:18.661+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:18.732+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:49:35.144+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:35.170+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:35.196+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:35.216+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:49:35.236+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:49:35.265+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:49:39.002+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:39.027+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:39.071+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:49:39.103+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:39.103+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:49:46.477+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:46.503+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:46.526+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:46.546+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:49:46.556+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:46.576+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:49:46.596+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:49:46.631+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:49:46.632+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:49:46.643+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:46.679+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:49.321+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:49.344+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:49.366+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:49.387+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:49:49.391+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:49:49.412+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:49:49.435+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:49:49.461+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:50:03.734+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:03.803+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0 
+    where
+        c1_0.email=?
+2024-10-31T20:50:03.838+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:50:03.872+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    update
+        clients 
+    set
+        contact=?,
+        contract_year=?,
+        email=?,
+        is_defer_status=?,
+        location=?,
+        name=?,
+        user_id=? 
+    where
+        id=?
+2024-10-31T20:50:03.978+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:04.013+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:50:04.046+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:50:10.022+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:10.093+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0 
+    where
+        c1_0.email=?
+2024-10-31T20:50:10.126+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:50:10.161+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    update
+        clients 
+    set
+        contact=?,
+        contract_year=?,
+        email=?,
+        is_defer_status=?,
+        location=?,
+        name=?,
+        user_id=? 
+    where
+        id=?
+2024-10-31T20:50:10.262+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:10.343+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:50:10.379+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:50:19.775+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:19.801+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:19.829+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:19.853+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:19.856+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:50:19.869+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:50:19.903+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:50:19.925+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:50:19.929+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:19.939+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:50:20.001+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:37.477+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:37.508+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:37.534+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:37.548+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:50:37.560+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:37.578+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:50:37.600+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:50:37.629+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:37.629+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:50:37.631+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:50:37.665+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:47.255+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:47.282+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:47.309+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:47.323+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:50:47.332+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:50:47.352+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:50:47.381+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:50:47.394+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:51:02.935+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:51:02.960+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:51:02.987+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:51:03.009+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:51:03.025+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:51:03.031+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:51:03.061+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:51:03.092+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:51:03.094+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:51:03.115+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:51:03.153+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:52:42.376+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:52:42.450+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:52:42.487+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T20:52:42.566+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:52:42.639+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        orders
+        (region, status, user_id, id) 
+    values
+        (?, ?, ?, ?)
+2024-10-31T20:52:42.711+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0 
+    where
+        p1_0.orders_id=? 
+        and p1_0.clients_id=?
+2024-10-31T20:52:42.750+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        clients c1_0 
+    left join
+        users u1_0 
+            on u1_0.id=c1_0.user_id 
+    where
+        c1_0.id=?
+2024-10-31T20:52:42.820+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        purchases
+        (clients_id, created_at, orders_id, status, id) 
+    values
+        (?, ?, ?, ?, ?)
+2024-10-31T20:52:42.893+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0 
+    where
+        (
+            pp1_0.pps_product_id, pp1_0.pps_product_size_id, pp1_0.purchase_id
+        ) in ((?, ?, ?))
+2024-10-31T20:52:42.928+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        purchase_products
+        (amount, clientid, pps_product_id, pps_product_size_id, purchase_id) 
+    values
+        (?, ?, ?, ?, ?)
+2024-10-31T20:53:34.810+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:53:34.881+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:53:34.917+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T20:53:34.987+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:53:35.058+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0 
+    where
+        p1_0.orders_id=? 
+        and p1_0.clients_id=?
+2024-10-31T20:53:35.094+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0 
+    where
+        (
+            pp1_0.pps_product_id, pp1_0.pps_product_size_id, pp1_0.purchase_id
+        ) in ((?, ?, ?))
+2024-10-31T20:53:35.130+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        purchase_products
+        (amount, clientid, pps_product_id, pps_product_size_id, purchase_id) 
+    values
+        (?, ?, ?, ?, ?)
+2024-10-31T20:54:29.858+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:29.888+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:29.917+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:29.928+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:54:29.956+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:54:29.959+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:29.990+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:54:30.024+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T20:54:30.024+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:54:30.042+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:30.078+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:48.506+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:48.529+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:48.558+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:48.580+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:54:48.583+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:54:48.597+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:54:48.616+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:54:48.628+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:54:48.650+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:55:03.360+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:03.428+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        c1_0.id 
+    from
+        clients c1_0 
+    where
+        c1_0.email=? 
+    fetch
+        first ? rows only
+2024-10-31T20:55:03.465+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:03.499+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        clients
+        (contact, contract_year, email, is_defer_status, location, name, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2024-10-31T20:55:03.602+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:03.673+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:55:03.706+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:55:04.862+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:04.940+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0 
+    where
+        c1_0.email=?
+2024-10-31T20:55:04.975+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:55:05.009+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    update
+        clients 
+    set
+        contact=?,
+        contract_year=?,
+        email=?,
+        is_defer_status=?,
+        location=?,
+        name=?,
+        user_id=? 
+    where
+        id=?
+2024-10-31T20:55:05.114+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:05.181+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:55:05.212+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:55:21.961+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:22.032+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:22.066+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T20:55:22.134+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:55:22.202+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0 
+    where
+        p1_0.orders_id=? 
+        and p1_0.clients_id=?
+2024-10-31T20:55:22.237+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0 
+    where
+        (
+            pp1_0.pps_product_id, pp1_0.pps_product_size_id, pp1_0.purchase_id
+        ) in ((?, ?, ?))
+2024-10-31T20:55:22.273+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    update
+        purchase_products 
+    set
+        amount=?,
+        clientid=? 
+    where
+        pps_product_id=? 
+        and pps_product_size_id=? 
+        and purchase_id=?
+2024-10-31T20:55:41.021+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:41.092+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:55:41.125+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T20:55:41.198+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:55:41.265+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0 
+    where
+        p1_0.orders_id=? 
+        and p1_0.clients_id=?
+2024-10-31T20:55:41.300+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0 
+    where
+        (
+            pp1_0.pps_product_id, pp1_0.pps_product_size_id, pp1_0.purchase_id
+        ) in ((?, ?, ?))
+2024-10-31T20:55:41.335+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    update
+        purchase_products 
+    set
+        amount=?,
+        clientid=? 
+    where
+        pps_product_id=? 
+        and pps_product_size_id=? 
+        and purchase_id=?2024-10-31T20:56:32.716+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:32.732+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:32.756+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:32.779+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:32.785+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:56:32.798+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:56:32.801+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:32.817+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:56:32.822+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:56:32.856+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:56:32.869+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:56:44.118+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:44.138+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:44.158+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:44.180+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:44.188+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:56:44.206+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:56:44.205+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:56:44.219+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:56:44.232+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:56:44.244+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:56:44.271+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:57:01.778+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:57:01.803+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:57:01.836+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:57:01.845+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:57:01.870+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:57:01.879+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:57:01.888+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:57:01.897+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:57:01.902+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:57:01.933+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:57:01.973+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0
+2024-10-31T20:57:47.492+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:57:47.562+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T20:57:47.595+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:59:03.234+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:59:03.302+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T20:59:47.885+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:59:47.931+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:59:47.952+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        c1_0.id,
+        c1_0.contact,
+        c1_0.contract_year,
+        c1_0.email,
+        c1_0.is_defer_status,
+        c1_0.location,
+        c1_0.name,
+        c1_0.user_id 
+    from
+        clients c1_0
+2024-10-31T20:59:47.965+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:59:47.983+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T20:59:47.988+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:59:47.997+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T20:59:48.012+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T20:59:48.034+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        pp1_0.pps_product_id,
+        pp1_0.pps_product_size_id,
+        pp1_0.purchase_id,
+        pp1_0.amount,
+        pp1_0.clientid 
+    from
+        purchase_products pp1_0
+2024-10-31T20:59:48.052+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T20:59:48.078+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T21:02:00.626+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:00.698+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0 
+    where
+        p1_0.id=?
+2024-10-31T21:02:00.765+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    update
+        purchases 
+    set
+        clients_id=?,
+        created_at=?,
+        orders_id=?,
+        status=? 
+    where
+        id=?
+2024-10-31T21:02:00.875+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:00.901+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:00.942+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T21:02:00.968+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T21:02:01.006+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    update
+        pps 
+    set
+        remaining=?,
+        status=? 
+    where
+        product_id=? 
+        and product_size_id=?
+2024-10-31T21:02:01.037+07:00 DEBUG 2596 --- [http-nio-8092-exec-6] org.hibernate.SQL                        : 
+    update
+        pps 
+    set
+        remaining=?,
+        status=? 
+    where
+        product_id=? 
+        and product_size_id=?
+2024-10-31T21:02:01.157+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:01.191+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T21:02:01.293+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:01.360+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T21:02:01.463+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:01.511+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.clients_id,
+        p1_0.created_at,
+        p1_0.orders_id,
+        p1_0.status 
+    from
+        purchases p1_0
+2024-10-31T21:02:53.928+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:02:53.995+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        o1_0.id,
+        o1_0.region,
+        o1_0.status,
+        o1_0.user_id 
+    from
+        orders o1_0
+2024-10-31T21:02:54.032+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.id=?
+2024-10-31T21:03:12.068+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:03:12.102+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:03:12.131+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:03:12.143+07:00 DEBUG 2596 --- [http-nio-8092-exec-10] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0
+2024-10-31T21:03:12.168+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:03:12.196+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0
+2024-10-31T21:03:50.444+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:03:50.523+07:00 DEBUG 2596 --- [http-nio-8092-exec-7] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2024-10-31T21:05:04.547+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:05:04.614+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        p1_0.id,
+        p1_0.name,
+        p1_0.price 
+    from
+        products p1_0 
+    where
+        p1_0.id=?
+2024-10-31T21:05:04.681+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    update
+        products 
+    set
+        name=?,
+        price=? 
+    where
+        id=?
+2024-10-31T21:05:04.785+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:05:04.855+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        p1_0.product_id,
+        p1_0.product_size_id,
+        p1_0.remaining,
+        p1_0.status 
+    from
+        pps p1_0 
+    where
+        (
+            p1_0.product_id, p1_0.product_size_id
+        ) in ((?, ?))
+2024-10-31T21:05:04.923+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    update
+        pps 
+    set
+        remaining=?,
+        status=? 
+    where
+        product_id=? 
+        and product_size_id=?
+2024-10-31T21:05:43.555+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:05:43.619+07:00 DEBUG 2596 --- [http-nio-8092-exec-4] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:06:26.864+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:06:26.931+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        product_sizes
+        (additional_price, size, id) 
+    values
+        (?, ?, ?)
+2024-10-31T21:06:27.053+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:06:27.119+07:00 DEBUG 2596 --- [http-nio-8092-exec-9] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:11:51.655+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:11:51.720+07:00 DEBUG 2596 --- [http-nio-8092-exec-5] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:18:11.928+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:18:11.997+07:00 DEBUG 2596 --- [http-nio-8092-exec-3] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:23:57.120+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:23:57.184+07:00 DEBUG 2596 --- [http-nio-8092-exec-1] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:30:55.755+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:30:55.827+07:00 DEBUG 2596 --- [http-nio-8092-exec-8] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:38:34.397+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.password,
+        u1_0.region,
+        u1_0.role,
+        u1_0.username 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2024-10-31T21:38:34.476+07:00 DEBUG 2596 --- [http-nio-8092-exec-2] org.hibernate.SQL                        : 
+    select
+        ps1_0.id,
+        ps1_0.additional_price,
+        ps1_0.size 
+    from
+        product_sizes ps1_0
+2024-10-31T21:39:46.228+07:00  INFO 2596 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-31T21:39:46.232+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists clients 
+       drop constraint if exists FKtiuqdledq2lybrds2k3rfqrv4
+2024-10-31T21:39:46.356+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists orders 
+       drop constraint if exists FK32ql8ubntj5uh44ph9659tiih
+2024-10-31T21:39:46.420+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists pps 
+       drop constraint if exists FKpxyiyukw8kxpcu6ynitkboa3q
+2024-10-31T21:39:46.480+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists pps 
+       drop constraint if exists FKotjbendm1ymvjxofxl55ux8xs
+2024-10-31T21:39:46.536+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists purchase_products 
+       drop constraint if exists FKt6noowfds0os2rqwoty1lf1ht
+2024-10-31T21:39:46.593+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists purchase_products 
+       drop constraint if exists FKmy756cmoekybdi0db4pk8usg7
+2024-10-31T21:39:46.651+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       drop constraint if exists FK7838l2kccypwmm5rpvl33gq9t
+2024-10-31T21:39:46.713+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    alter table if exists purchases 
+       drop constraint if exists FKgpwjwuv6yqoabjgy5hlokqmox
+2024-10-31T21:39:46.779+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists clients cascade
+2024-10-31T21:39:46.851+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists orders cascade
+2024-10-31T21:39:46.914+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists pps cascade
+2024-10-31T21:39:46.974+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists product_sizes cascade
+2024-10-31T21:39:47.030+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists products cascade
+2024-10-31T21:39:47.086+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists purchase_products cascade
+2024-10-31T21:39:47.141+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists purchases cascade
+2024-10-31T21:39:47.213+07:00 DEBUG 2596 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : 
+    drop table if exists users cascade
+2024-10-31T21:39:47.269+07:00  INFO 2596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-31T21:39:47.332+07:00  INFO 2596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
