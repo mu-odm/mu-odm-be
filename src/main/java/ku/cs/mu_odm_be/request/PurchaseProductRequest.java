@@ -9,9 +9,6 @@ import java.util.UUID;
 @Data
 public class PurchaseProductRequest {
 
-//    @NotBlank
-//    private UUID productID;
-
     @NotBlank
     private UUID clientID;
 

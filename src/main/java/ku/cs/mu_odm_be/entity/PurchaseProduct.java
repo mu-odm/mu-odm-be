@@ -3,6 +3,8 @@ package ku.cs.mu_odm_be.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Entity
 @Data
 @Table(name = "purchase_products")
@@ -11,11 +13,6 @@ public class PurchaseProduct {
     private PurchaseProductKey id;
 
     private int amount;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @MapsId("product_id")
-//    @JoinColumn(name = "product_id", insertable = false, updatable = false)
-//    private Product product;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("purchase_id")
@@ -29,4 +26,5 @@ public class PurchaseProduct {
             @JoinColumn(name = "pps_product_size_id", referencedColumnName = "product_size_id")
     })
     private PPS pps;
+    private UUID clientID;
 }
