@@ -21,7 +21,7 @@ public class MuOdmBeApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("https://muodm-deploy-kd4vrzwif-xeff09s-projects.vercel.app", "http://localhost:3000")
+						.allowedOrigins("http://localhost:3000")
 						.allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
 						.allowedHeaders("*")
 						.allowCredentials(true);
